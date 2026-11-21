@@ -1,0 +1,68 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Hogwarts Magic Rebellion | Colegio de rol de Harry Potter en WhatsApp</title>
+<meta name="description" content="Colegio de rol de Harry Potter en WhatsApp para Latinoamérica. Gana puntos, compra en las tiendas, toma clases y compite por la copa de tu casa.">
+<meta property="og:title" content="Hogwarts Magic Rebellion"><meta property="og:description" content="Te sentirás como en un verdadero Hogwarts. Colegio de rol en WhatsApp."><meta property="og:image" content="logo.png"><meta property="og:type" content="website">
+<link rel="icon" href="logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Alegreya:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3ead8;--card:#fbf5e8;--ink:#2b1d12;--mut:#6b5742;--acc:#b5541c;--line:#d9c7a3;--inv:0;--sl:#1f7a3d;--hu:#e3b505;--rv:#2a5db0;--gr:#b3261e}
+:root[data-t=dark]{--bg:#14110e;--card:#1e1913;--ink:#f1e6cf;--mut:#b9a98c;--acc:#e8893f;--line:#3a3025;--inv:1}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:calc(64px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.6 Alegreya,Georgia,serif;padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
+h1,h2,h3{font-family:Cinzel,serif;line-height:1.2;margin:0}
+a{color:var(--acc)}
+.bar{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px);display:flex;align-items:center}
+nav{display:flex;gap:4px;overflow-x:auto;padding:10px 12px;flex:1;scrollbar-width:none}nav::-webkit-scrollbar{display:none}
+nav a{white-space:nowrap;text-decoration:none;color:var(--ink);padding:6px 12px;border-radius:99px;font-size:16px;font-weight:700}
+nav a:hover,nav a:focus-visible{background:var(--card);outline:2px solid var(--acc)}
+#tg{border:0;background:none;font-size:22px;padding:8px 14px;cursor:pointer;color:var(--ink)}
+.hero{text-align:center;padding:36px 20px 44px;max-width:760px;margin:auto}
+.hero img{width:min(300px,70%);filter:invert(var(--inv))}
+.hero h1{font-size:clamp(28px,7vw,48px);font-weight:800;margin:18px 0 14px}
+.hero p{color:var(--mut);margin:0 auto 24px;max-width:56ch}
+.house{display:flex;height:6px;max-width:260px;margin:0 auto 22px}.house i{flex:1}
+.btn{display:inline-block;background:var(--acc);color:#fff;text-decoration:none;font-weight:700;padding:14px 26px;border-radius:10px;font-size:19px}
+.btn.alt{background:none;color:var(--acc);border:2px solid var(--acc);margin-left:8px}
+.btn:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+section{max-width:960px;margin:auto;padding:36px 16px}
+section>h2{font-size:clamp(24px,5.5vw,34px);color:var(--acc);margin-bottom:6px}
+.intro{color:var(--mut);margin:0 0 18px;max-width:62ch}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(270px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--acc);padding:14px 16px;border-radius:6px}
+.card h3{font-size:18px;margin-bottom:4px}.card p{margin:0}
+.tag{display:inline-block;margin-top:8px;font-weight:700;font-size:15px;color:var(--acc)}
+.card .btn{font-size:16px;padding:9px 16px;margin:10px 8px 0 0}
+details{background:var(--card);border:1px solid var(--line);border-radius:6px;margin-bottom:8px;padding:12px 16px}
+summary{font-weight:700;cursor:pointer}details p{margin:8px 0 0}
+footer{text-align:center;color:var(--mut);font-size:15px;padding:30px 20px;max-width:720px;margin:auto}
+.cta{position:fixed;left:0;right:0;bottom:0;background:var(--bg);border-top:1px solid var(--line);padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px));text-align:center;z-index:5}
+.cta .btn{display:block}
+@media(min-width:800px){.cta{display:none}body{padding-bottom:0}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style></head><body>
+<div class="bar"><nav id="nav"></nav><button id="tg" aria-label="Cambiar modo claro u oscuro">◐</button></div>
+<header class="hero"><img src="logo.png" alt="Logo de Hogwarts Magic Rebellion">
+<div class="house" aria-hidden="true"><i style="background:var(--sl)"></i><i style="background:var(--hu)"></i><i style="background:var(--rv)"></i><i style="background:var(--gr)"></i></div>
+<h1 id="ht">Te sentirás como en un verdadero Hogwarts</h1><p id="hp"></p>
+<a class="btn" data-l="registro" href="#">Registrarme</a><a class="btn alt" href="#empezar">Cómo funciona</a></header>
+<main id="main"></main>
+<footer>Proyecto de fans sin fines de lucro. Hogwarts Magic Rebellion no tiene relación con Warner Bros. Entertainment ni con J. K. Rowling. Harry Potter y sus nombres son marcas de sus respectivos dueños.<br>Dirigido por Abi Umbridge y Valery Cobblepot.</footer>
+<div class="cta"><a class="btn" data-l="registro" href="#">Registrarme ahora</a></div>
+<script>
+const R=document.documentElement,t=localStorage.getItem("t")||(matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light");R.dataset.t=t;
+tg.onclick=()=>{const n=R.dataset.t=="dark"?"light":"dark";R.dataset.t=n;try{localStorage.setItem("t",n)}catch(e){}};
+const E=s=>String(s||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+fetch("content.json").then(r=>r.json()).then(c=>{
+const L=c.links;ht.textContent=c.hero.titulo;hp.textContent=c.hero.texto;
+document.querySelectorAll("[data-l]").forEach(a=>a.href=L[a.dataset.l]);
+nav.innerHTML=c.sections.map(s=>`<a href="#${E(s.id)}">${E(s.titulo)}</a>`).join("");
+const btn=(u,x)=>`<a class="btn" href="${E(u)}" target="_blank" rel="noopener">${x}</a>`;
+main.innerHTML=c.sections.map(s=>`<section id="${E(s.id)}"><h2>${E(s.titulo)}</h2>${s.intro?`<p class="intro">${E(s.intro)}</p>`:""}`+
+(s.id=="faq"?s.items.map(i=>`<details><summary>${E(i.t)}</summary><p>${E(i.d)}</p></details>`).join(""):
+`<div class="grid">${s.items.map(i=>{let h=i.h,b="";
+if(h=="zepeto")b=btn(L.zepeto_ninos,"Uniforme niños")+btn(L.zepeto_ninas,"Uniforme niñas"),h="";
+else if(h=="canal")b=btn(L.canal,"Seguir canal"),h="";
+else if(h=="instagram")b=btn(L.instagram,"Ir al Instagram"),h="";
+return `<div class="card"><h3>${E(i.t)}</h3><p>${E(i.d)}</p>${h?`<span class="tag">${E(h)}</span>`:""}${b}</div>`}).join("")}</div>`)+"</section>").join("")});
+</script></body></html>
