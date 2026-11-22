@@ -33,13 +33,13 @@ c.sections.forEach((s,si)=>{const d=document.createElement("details");d.open=ope
 d.innerHTML=`<summary>${(s.titulo||"Sin título").replace(/</g,"&lt;")}</summary>`;
 d.append(F(s,"id","Identificador (sin espacios ni acentos)"),F(s,"titulo","Título"),F(s,"intro","Introducción",1));
 s.items.forEach((it,ii)=>{const w=document.createElement("div");w.className="it";
-w.append(F(it,"t","Nombre"),F(it,"d","Descripción",1),F(it,"h","Horario o etiqueta (opcional)"));
+w.append(F(it,"t","Nombre"),F(it,"d","Descripción",1),F(it,"h","Horario o etiqueta (opcional)"),F(it,"img","Imagen (ruta, ej. images/gringotts.webp)"));
 const r=document.createElement("div");r.className="row";
 r.append(B("↑","s",()=>mv(s.items,ii,-1)),B("↓","s",()=>mv(s.items,ii,1)),B("Quitar","x s",()=>{if(confirm("¿Quitar este elemento?")){s.items.splice(ii,1);render()}}));w.append(r);d.append(w)});
 const r=document.createElement("div");r.className="row";
 r.append(B("+ Elemento","alt",()=>{s.items.push({t:"",d:"",h:""});open.add(s);render()}),B("↑ Sección","s",()=>mv(c.sections,si,-1)),B("↓ Sección","s",()=>mv(c.sections,si,1)),B("Quitar sección","x s",()=>{if(confirm("¿Quitar la sección completa?")){c.sections.splice(si,1);render()}}));d.append(r);m.append(d)});
 m.append(B("+ Agregar sección","",()=>{const s={id:"nueva",titulo:"Nueva sección",intro:"",items:[]};c.sections.push(s);open.add(s);render()}))}
-const DEF_REPO="",DEF_BRANCH="main";
+const DEF_REPO="slrcttr332/HOGWARTS-MAGIC-REBELLION",DEF_BRANCH="main";
 function view(ok){$("lg").style.display=ok?"none":"block";$("hd").style.display=ok?"flex":"none";m.style.display=ok?"block":"none"}
 function logout(t){W("tok","");view(false);$("le").textContent=t||""}
 const remote=(r,b,t)=>fetch(`https://api.github.com/repos/${r}/contents/content.json?ref=${b}`,{headers:{Authorization:"Bearer "+t,Accept:"application/vnd.github.raw+json"}});
