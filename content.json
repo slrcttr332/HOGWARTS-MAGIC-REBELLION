@@ -8,7 +8,7 @@
  },
  "hero": {
   "titulo": "Te sentirás como en un verdadero Hogwarts",
-  "texto": "Hogwarts Magic Rebellion es un colegio de rol de Harry Potter en WhatsApp para toda Latinoamérica. Haz actividades, gana puntos, gasta galeones en las tiendas y compite por la copa de tu casa."
+  "texto": "Hogwarts Magic Rebellion es un colegio de actividades de Harry Potter en WhatsApp para toda Latinoamérica. Haz actividades, gana puntos, gasta galeones en las tiendas y compite por la copa de tu casa."
  },
  "sections": [
   {
@@ -49,53 +49,53 @@
      "d": "Ambición, astucia y liderazgo. Aquí brillan quienes van por lo que quieren y saben cómo conseguirlo.",
      "h": "",
      "img": "images/casa-slytherin.webp",
-     "ic": ""
-    },
-    {
-     "t": "Hufflepuff",
-     "d": "Lealtad, trabajo en equipo y justicia. Aquí se valora a quienes se esfuerzan y cuidan a los suyos.",
-     "h": "",
-     "img": "images/casa-hufflepuff.webp",
-     "ic": ""
+     "ic": "🐍"
     },
     {
      "t": "Ravenclaw",
      "d": "Ingenio, curiosidad y sabiduría. Aquí destacan quienes piensan distinto y siempre quieren aprender.",
      "h": "",
      "img": "images/casa-ravenclaw.webp",
-     "ic": ""
+     "ic": "🦅"
+    },
+    {
+     "t": "Hufflepuff",
+     "d": "Lealtad, trabajo en equipo y justicia. Aquí se valora a quienes se esfuerzan y cuidan a los suyos.",
+     "h": "",
+     "img": "images/casa-hufflepuff.webp",
+     "ic": "🦡"
     },
     {
      "t": "Gryffindor",
      "d": "Valentía, audacia y determinación. Aquí avanzan quienes se atreven a dar el primer paso.",
      "h": "",
      "img": "images/casa-gryffindor.webp",
-     "ic": ""
+     "ic": "🦁"
     }
    ]
   },
   {
    "id": "puntos",
    "titulo": "Cómo ganar puntos",
-   "intro": "Todas las actividades dan puntos. Puedes empezar con pocos y sumar poco a poco.",
+   "intro": "Todas las actividades dan puntos. \nPuedes empezar con pocos y sumar poco a poco.",
    "items": [
     {
      "t": "Actividades principales",
-     "d": "Las más frecuentes del colegio: retos, dinámicas, flashes y spam.",
+     "d": "Las más frecuentes del colegio: \nRetos, Dinámicas, Flashes y Spam.",
      "h": "",
      "img": "",
      "ic": "⭐"
     },
     {
      "t": "Otras actividades",
-     "d": "También suman puntos cantar, leer, entregar dulces, jugar en el bar, tomar clases y competir en torneos.",
+     "d": "También suman puntos:\nCantar, Leer, Entregar Dulces, Jugar en el Bar, Clases y Torneos",
      "h": "",
      "img": "",
      "ic": "✨"
     },
     {
      "t": "La copa",
-     "d": "Es el periodo para ganar puntos y dura 2 semanas. Al terminar, la casa con más puntos levanta la copa de las casas.",
+     "d": "Es el periodo para ganar puntos y dura 2 semanas. \nAl terminar, la casa con más puntos levanta la copa de las casas.",
      "h": "",
      "img": "",
      "ic": "🏆"
@@ -109,52 +109,52 @@
    "items": [
     {
      "t": "Flash",
-     "d": "Actividad rápida y fácil. Dura entre 10 y 20 minutos.",
+     "d": "Actividad rápida y fácil. \nDura entre 10 y 20 minutos.",
      "h": "",
      "img": "",
      "ic": "⚡"
     },
     {
      "t": "Dinámica",
-     "d": "Actividad con reglas y una mecánica a seguir. Dura alrededor de 30 minutos.",
+     "d": "Actividad con reglas y una mecánica a seguir. \nDura alrededor de 30 minutos.",
      "h": "",
      "img": "",
      "ic": "🎭"
     },
     {
      "t": "Spam",
-     "d": "Invitar gente al colegio compartiendo su link en redes sociales y grupos: Facebook, Instagram, YouTube o WhatsApp.",
+     "d": "Invitar gente al colegio compartiendo su link en redes sociales y grupos: \n- Facebook\n- Instagram\n- YouTube\n- WhatsApp",
      "h": "",
      "img": "",
      "ic": "📣"
     },
     {
      "t": "Lumos y Nox",
-     "d": "Los hechizos que abren y cierran el día en el colegio. Lumos marca el inicio a las 8 am y Nox el final a las 10 pm.",
+     "d": "Los hechizos que abren y cierran el día en el colegio.\n- Lumos marca el inicio a las 8 am\n- Nox el final a las 10 pm.",
      "h": "",
      "img": "",
      "ic": "🌙"
     },
     {
      "t": "Directivos",
-     "d": "El equipo que te guía en tu casa: prefecto, subjefe y jefe de casa. Acude a ellos con cualquier duda.",
+     "d": "El equipo que te guía en tu casa: Jefe, Subjefe y Prefectos. \nAcude a ellos con cualquier duda.",
      "h": "",
      "img": "",
      "ic": "🛡️"
     },
     {
      "t": "Galeones",
-     "d": "La moneda del colegio. Se guardan en Gringotts y se gastan en las tiendas.",
+     "d": "La moneda del colegio. Se guardan en Gringotts y se gastan en las tiendas y demás actividades.",
      "h": "",
      "img": "",
      "ic": "💰"
     },
     {
-     "t": "CDCM",
-     "d": "Cuidado de criaturas mágicas, una de las clases del colegio.",
+     "t": "Reto Diario",
+     "d": "Actividad diaria inspirada en la temática del día ",
      "h": "",
      "img": "",
-     "ic": "🐉"
+     "ic": "🤹🏻"
     }
    ]
   },
@@ -165,57 +165,57 @@
    "items": [
     {
      "t": "Gran Comedor",
-     "d": "El punto de encuentro de todos los alumnos. Aquí convivimos y se realizan los flashes. Si sales de la comunidad, el colegio te saca de este grupo.",
-     "h": "Fijo · Por definir",
+     "d": "El punto de encuentro de todos los alumnos. Aquí convivimos y se realizan los flashes. \n- Si sales de la comunidad, el colegio te saca de este grupo.",
+     "h": "Fijo · Lunes a Domingo, 8am a 10pm",
      "img": "",
      "ic": ""
     },
     {
      "t": "Sala de retos",
      "d": "Envía aquí tu reto junto con tu emoji y tu mascota.",
-     "h": "Fijo · Por definir",
+     "h": "Fijo · Lunes a Viernes, 8am a 8am",
      "img": "",
      "ic": ""
     },
     {
      "t": "Dinámicas Mágicas",
      "d": "Aquí se hacen las dinámicas del colegio, siempre con horario.",
-     "h": "Fijo · Por definir",
+     "h": "Fijo · Disponible en la Descripción del Grupo",
      "img": "images/dinamicas.webp",
      "ic": ""
     },
     {
      "t": "Arena de Duelos",
      "d": "Mídete en duelo con quien quieras. Si ganas, obtienes puntos.",
-     "h": "Fijo · Por definir",
+     "h": "Fijo · Lunes a Viernes",
      "img": "images/duelos.webp",
      "ic": ""
     },
     {
      "t": "Sonorus",
      "d": "Para quienes quieren cantar. Envías 5 audios de 30 segundos cada uno.",
-     "h": "Opcional · Por definir",
+     "h": "Opcional · NoSeLaVerdad",
      "img": "images/sonorus.webp",
      "ic": ""
     },
     {
      "t": "Gringotts",
-     "d": "Tu cuenta se crea al registrarte. Aquí depositas y transfieres galeones.",
-     "h": "Opcional · Lunes, miércoles y viernes",
+     "d": "Tu cuenta se crea al registrarte. \nAquí depositas, consultas tu saldo y transfieres galeones.",
+     "h": "Opcional · Lunes, Miércoles y Viernes, 11am a 8pm",
      "img": "images/gringotts.webp",
      "ic": ""
     },
     {
      "t": "Paga Dulces",
      "d": "Solo para quienes compraron dulces.",
-     "h": "Opcional · Lunes a sábado",
+     "h": "Opcional · Lunes a Sábado",
      "img": "images/paga-dulces.webp",
      "ic": ""
     },
     {
      "t": "Bar Las 3 Escobas",
      "d": "Abre después del Nox y ahí puedes jugar plato. Cierra con el Lumos.",
-     "h": "Opcional · Desde el Nox hasta el Lumos",
+     "h": "Opcional · Lunes a Sábado, 10pm a 8am",
      "img": "images/bar.webp",
      "ic": ""
     },
@@ -236,13 +236,13 @@
     {
      "t": "Cabina",
      "d": "Aquí se envían los Zepeto con la temática de la copa y de la revista.",
-     "h": "Temporal · Jueves, viernes y sábado",
+     "h": "Temporal · Cuándo se solicite",
      "img": "",
      "ic": ""
     },
     {
      "t": "Aula de clases",
-     "d": "Aquí se imparten las clases. Se agrega 2 veces por semana y cada clase dura 30 minutos.",
+     "d": "Aquí se imparten las clases. Se agrega 2 veces por semana y cada clase es sobre una materia mágica de Harry Potter ",
      "h": "Temporal · 2 veces por semana",
      "img": "images/aula.webp",
      "ic": ""
@@ -256,43 +256,43 @@
    "items": [
     {
      "t": "Honeydukes",
-     "d": "Dulces. Las instrucciones para regalarlos te llegan al privado.",
+     "d": "Dulces de todo tipo.\nLas instrucciones para regalarlos te llegan al privado.",
      "h": "Todos los domingos, 8 am a 5 pm",
      "img": "images/honeydukes.webp",
      "ic": ""
     },
     {
      "t": "Borgin & Burke",
-     "d": "Aquí están los productos más codiciados del colegio. Al comprar, recibes por privado las instrucciones para usarlos.",
-     "h": "Domingos, cada 2 semanas o el día de entrega de copa, 8 am a 5 pm",
+     "d": "Aquí están los productos más codiciados del colegio. \nAl comprar, recibes por privado las instrucciones para usarlos.",
+     "h": "Domingos, Día de entrega de copa, 8 am a 5 pm",
      "img": "images/borgin.webp",
      "ic": ""
     },
     {
      "t": "Suitcase Scamander's",
-     "d": "Mascotas. Necesitas haber participado en una copa con nosotros para obtener una.",
-     "h": "Jueves de la segunda semana de copa",
+     "d": "Mascotas. \nNecesitas haber participado en una copa con nosotros para obtener una.",
+     "h": "Jueves de la 2da semana de copa",
      "img": "images/suitcase.webp",
      "ic": ""
     },
     {
      "t": "Guardería",
      "d": "Aquí cuidas la mascota que obtuviste en la maleta.",
-     "h": "Por definir",
+     "h": "11am a 8pm",
      "img": "images/guarderia.webp",
      "ic": ""
     },
     {
      "t": "Escobas de calidad Madame Umbridge",
      "d": "Desde una Nimbus 2000 hasta una Moscarda.",
-     "h": "Por definir",
+     "h": "11 am a 8pm",
      "img": "images/escobas.webp",
      "ic": ""
     },
     {
      "t": "Ollivander's",
-     "d": "Varitas. Recuerda que la varita escoge al mago.",
-     "h": "Por definir",
+     "d": "Varitas. \nRecuerda que la varita escoge al mago.",
+     "h": "11am a 8pm",
      "img": "images/ollivanders.webp",
      "ic": ""
     }
@@ -331,7 +331,7 @@
     },
     {
      "t": "Experto",
-     "d": "Para quien ya demostró que sabe pelear. Subir a este nivel te da beneficios.",
+     "d": "Para quien ya demostró que sabe pelear. Subir a este nivel te da status de Experto.",
      "h": "",
      "img": "",
      "ic": "⚔️"
