@@ -1,67 +1,107 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Edicion de HMR</title>
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex"><title>Panel HMR</title>
 <style>
-body{margin:0;font:16px/1.5 system-ui,sans-serif;background:#f3ead8;color:#2b1d12;padding-bottom:90px}
-header{position:sticky;top:0;background:#2b1d12;color:#fff;padding:10px 12px;display:flex;gap:8px;flex-wrap:wrap;align-items:center;z-index:2}
-header b{flex:1;min-width:100px}
-button{border:0;border-radius:8px;padding:10px 14px;font-weight:700;background:#b5541c;color:#fff;cursor:pointer;font-size:15px}
-button.alt{background:#fff;color:#2b1d12}button.x{background:#a3261e}button.s{padding:6px 10px;background:#d9c7a3;color:#2b1d12}
+*{box-sizing:border-box}body{margin:0;font:16px/1.5 system-ui,sans-serif;background:#f3ead8;color:#2b1d12;padding-bottom:100px}
+header{position:sticky;top:0;background:#2b1d12;color:#fff;display:flex;align-items:center;justify-content:space-between;padding:10px 14px;z-index:3}header b{font-size:18px}
+button{min-height:48px;border:0;border-radius:12px;padding:0 16px;font:700 16px system-ui,sans-serif;background:#a8480f;color:#fff;cursor:pointer;touch-action:manipulation}
+button.alt{background:#fff;color:#2b1d12}button.s{background:#d9c7a3;color:#2b1d12;min-width:48px;padding:0 12px}button.x{background:#a3261e}
+button.add{width:100%;background:#fff;color:#a8480f;border:2px dashed #a8480f;margin:6px 0 14px}
 main{max-width:760px;margin:auto;padding:12px}
-fieldset,details{background:#fbf5e8;border:1px solid #d9c7a3;border-radius:8px;margin:0 0 12px;padding:12px}
-summary{font-weight:700;cursor:pointer}legend{font-weight:700;padding:0 6px}
-label{display:block;font-size:14px;font-weight:700;margin:8px 0 2px}
-input,textarea{width:100%;font:inherit;padding:8px;border:1px solid #bda985;border-radius:6px;background:#fff}textarea{min-height:70px}
-.it{border-top:2px dashed #d9c7a3;margin-top:12px;padding-top:6px}.row{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
-#msg{position:fixed;left:0;right:0;bottom:0;padding:14px;background:#2b1d12;color:#fff;margin:0;display:none}
-#lg{display:none;max-width:420px;margin:12vh 16px;padding:20px;background:#fbf5e8;border:1px solid #d9c7a3;border-radius:10px}@media(min-width:460px){#lg{margin:12vh auto}}#lg h1{margin:0 0 6px;font-size:22px}#le{color:#a3261e;font-weight:700;min-height:1.5em}</style></head><body>
+label{display:block;font-weight:700;font-size:15px;margin:12px 0 4px}
+input,textarea,select{width:100%;font:16px system-ui,sans-serif;padding:12px;border:2px solid #bda985;border-radius:10px;background:#fff;color:#2b1d12}textarea{min-height:90px}
+.toc{display:flex;gap:8px;overflow-x:auto;padding:4px 0 14px;align-items:center}.toc b{flex:none}.toc button{flex:none;min-height:40px;background:#fff;color:#2b1d12;border:2px solid #2b1d12;font-size:15px}
+.sec{background:#fbf5e8;border:3px solid #2b1d12;border-radius:16px;margin-bottom:20px;overflow:hidden}
+.sec>summary{list-style:none;background:#2b1d12;color:#f6dc9a;padding:14px;display:flex;align-items:center;gap:10px;cursor:pointer;font-weight:800;font-size:18px}.sec>summary::-webkit-details-marker{display:none}
+.sec>summary i{flex:none;width:34px;height:34px;border-radius:50%;background:#f6dc9a;color:#2b1d12;display:grid;place-items:center;font-style:normal;font-size:16px}
+.sec>summary span{flex:1}.sec>summary small{font-weight:400;font-size:13px;color:#d9c7a3}.in{padding:12px}
+.dat{background:#fff;border:2px solid #d9c7a3;border-radius:12px;padding:4px 12px 12px}h4{margin:10px 0 0;color:#a8480f;font-size:15px;text-transform:uppercase;letter-spacing:.05em}h4.lh{margin:18px 0 0}
+.it{border:2px solid #b8892b;border-radius:14px;margin:12px 0;overflow:hidden;background:#fff}
+.ih{background:#e8dabb;border-bottom:2px solid #b8892b;padding:10px 12px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}.ih b{color:#a8480f;flex:none}.ih span{flex:1;min-width:110px;font-weight:700;overflow-wrap:anywhere}.ib{display:flex;gap:6px}
+.bd{padding:2px 12px 14px}.ie,.se{text-align:center;font-size:13px;color:#6a5640;padding:7px;background:#e8dabb;border-top:2px solid #b8892b}.se{margin-top:14px;border-radius:8px;font-weight:700}
+.sc{border:2px solid #a8480f;border-radius:12px;margin:14px 0 0;padding:4px 10px 12px;background:#fbf5e8}.sc legend{font-weight:800;color:#a8480f;padding:0 6px}
+.dc{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin:8px 0}.dc button{min-height:48px;padding:0;background:#fff;color:#6a5640;border:2px solid #bda985}.dc button.on{background:#a8480f;border-color:#a8480f;color:#fff}
+.tp{display:flex;gap:8px;align-items:center;margin:8px 0}.tp input{flex:1}
+.ap{margin-top:12px}.ap summary{font-weight:700;cursor:pointer;min-height:40px;display:flex;align-items:center}.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.row button{flex:1}
+.bar{position:fixed;left:0;right:0;bottom:0;background:#2b1d12;padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px));z-index:4;display:flex}.bar button{flex:1;min-height:54px;font-size:18px}
+#msg{position:fixed;left:12px;right:12px;bottom:calc(86px + env(safe-area-inset-bottom,0px));background:#fff;color:#2b1d12;border:3px solid #a8480f;border-radius:12px;padding:12px 14px;margin:0;display:none;z-index:5;font-weight:700}
+#lg{display:none;max-width:420px;margin:10vh 16px;padding:20px;background:#fbf5e8;border:2px solid #d9c7a3;border-radius:14px}@media(min-width:460px){#lg{margin:10vh auto}}#lg h1{margin:0 0 6px;font-size:22px}#le{color:#a3261e;font-weight:700;min-height:1.5em}
+</style></head><body>
 <div id="lg"><h1>Panel HMR</h1><p>Entra con tu token para editar la página.</p><div id="rpw"><label>Repositorio (usuario/repositorio)</label><input id="rp" autocomplete="off"></div><label>Token</label><input id="tk" type="password" autocomplete="off"><div class="row"><button id="go">Entrar</button></div><p id="le"></p></div>
-<header id="hd" style="display:none"><b>Panel HMR</b><button id="pub">Publicar cambios</button><button class="alt" id="out">Cerrar sesión</button></header>
-<main id="m" style="display:none">Cargando…</main><p id="msg"></p>
+<header id="hd" style="display:none"><b>Panel HMR</b><button class="alt" id="out">Cerrar sesión</button></header>
+<main id="m" style="display:none"></main>
+<div class="bar" id="bar" style="display:none"><button id="pub">Publicar cambios</button></div>
+<p id="msg"></p>
 <script>
-let c;const $=i=>document.getElementById(i),open=new Set();
-const S=k=>{try{return localStorage.getItem(k)||""}catch(e){return""}},W=(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}};
-const say=(t,keep)=>{msg.style.display="block";msg.textContent=t;if(!keep)setTimeout(()=>msg.style.display="none",6000)};
-const H=()=>({Authorization:"Bearer "+S("tok"),Accept:"application/vnd.github+json"});
-const api=()=>`https://api.github.com/repos/${S("repo")}/contents/content.json`;
-function F(o,k,label,area){const l=document.createElement("label");l.textContent=label;const i=document.createElement(area?"textarea":"input");i.value=o[k]||"";i.oninput=()=>o[k]=i.value;l.append(i);return l}
-function B(txt,cls,fn){const b=document.createElement("button");b.textContent=txt;b.className=cls||"";b.onclick=fn;return b}
-function mv(a,i,d){const j=i+d;if(j<0||j>=a.length)return;[a[i],a[j]]=[a[j],a[i]];render()}
-function render(){m.innerHTML="";
-const lk=document.createElement("fieldset");lk.innerHTML="<legend>Enlaces</legend>";
-[["registro","Registro estudiantil"],["canal","Canal Corazón de bruja"],["instagram","Instagram"],["zepeto_ninos","Zepeto niños"],["zepeto_ninas","Zepeto niñas"]].forEach(([k,l])=>lk.append(F(c.links,k,l)));m.append(lk);
-const hf=document.createElement("fieldset");hf.innerHTML="<legend>Portada</legend>";hf.append(F(c.hero,"titulo","Título"),F(c.hero,"texto","Texto",1));m.append(hf);
-c.sections.forEach((s,si)=>{const d=document.createElement("details");d.open=open.has(s);d.ontoggle=()=>d.open?open.add(s):open.delete(s);
-d.innerHTML=`<summary>${(s.titulo||"Sin título").replace(/</g,"&lt;")}</summary>`;
-d.append(F(s,"id","Identificador (sin espacios ni acentos)"),F(s,"titulo","Título"),F(s,"intro","Introducción",1));
-s.items.forEach((it,ii)=>{const w=document.createElement("div");w.className="it";
-w.append(F(it,"t","Nombre"),F(it,"d","Descripción",1),F(it,"h","Horario o etiqueta (opcional)"),F(it,"img","Imagen (ruta, ej. images/gringotts.webp)"),F(it,"ic","Icono emoji (para tarjetas sin foto)"));
-const r=document.createElement("div");r.className="row";
-r.append(B("↑","s",()=>mv(s.items,ii,-1)),B("↓","s",()=>mv(s.items,ii,1)),B("Quitar","x s",()=>{if(confirm("¿Quitar este elemento?")){s.items.splice(ii,1);render()}}));w.append(r);d.append(w)});
-const r=document.createElement("div");r.className="row";
-r.append(B("+ Elemento","alt",()=>{s.items.push({t:"",d:"",h:""});open.add(s);render()}),B("↑ Sección","s",()=>mv(c.sections,si,-1)),B("↓ Sección","s",()=>mv(c.sections,si,1)),B("Quitar sección","x s",()=>{if(confirm("¿Quitar la sección completa?")){c.sections.splice(si,1);render()}}));d.append(r);m.append(d)});
-m.append(B("+ Agregar sección","",()=>{const s={id:"nueva",titulo:"Nueva sección",intro:"",items:[]};c.sections.push(s);open.add(s);render()}))}
 const DEF_REPO="slrcttr332/HOGWARTS-MAGIC-REBELLION",DEF_BRANCH="main";
-function view(ok){$("lg").style.display=ok?"none":"block";$("hd").style.display=ok?"flex":"none";m.style.display=ok?"block":"none"}
-function logout(t){W("tok","");view(false);$("le").textContent=t||""}
-const remote=(r,b,t)=>fetch(`https://api.github.com/repos/${r}/contents/content.json?ref=${b}`,{headers:{Authorization:"Bearer "+t,Accept:"application/vnd.github.raw+json"}});
-async function login(){const r=(DEF_REPO||$("rp").value).trim(),t=$("tk").value.trim();
-if(!r||!t){$("le").textContent="Escribe el repositorio y el token.";return}
-$("le").textContent="Verificando…";
-try{const x=await remote(r,DEF_BRANCH,t);if(!x.ok)throw 0;c=await x.json();W("repo",r);W("branch",DEF_BRANCH);W("tok",t);$("tk").value="";$("le").textContent="";view(true);render()}
-catch(e){$("le").textContent="No se pudo entrar. Revisa el repositorio y el token."}}
-async function start(){if(DEF_REPO)$("rpw").style.display="none";
-if(!S("tok")||!S("repo"))return view(false);
-try{const x=await remote(S("repo"),S("branch")||"main",S("tok"));if(!x.ok)throw 0;c=await x.json();view(true);render()}catch(e){logout("Tu sesión caducó o el token ya no sirve. Vuelve a entrar.")}}
-$("out").onclick=()=>logout("");$("go").onclick=login;
-async function getSha(b){const h=H();const r=await fetch(api()+"?ref="+b,{headers:h,cache:"no-store"});
+let c,dirty=0;const $=i=>document.getElementById(i),open=new Set();
+const S=k=>{try{return localStorage.getItem(k)||""}catch(e){return""}},P=(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}};
+const say=(t,keep)=>{msg.style.display="block";msg.textContent=t;clearTimeout(say.t);if(!keep)say.t=setTimeout(()=>msg.style.display="none",7000)};
+const H=()=>({Authorization:"Bearer "+S("tok"),Accept:"application/vnd.github+json"}),api=()=>`https://api.github.com/repos/${S("repo")}/contents/content.json`;
+const esc=x=>String(x==null?"":x).replace(/[&<>"]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m]));
+const TMR=/(\d{1,2}(?::\d{2})?\s?(?:am|pm)\s+a\s+\d{1,2}(?::\d{2})?\s?(?:am|pm))\s*$/i,DAYR=/lunes|martes|mi[eé]rcoles|jueves|viernes|s[aá]bado|domingo/i;
+function norm(c){c.sections.forEach(s=>s.items.forEach(i=>{if(["dias","hora","cat","btn"].some(k=>k in i))return;let h=i.h||"";
+if(["zepeto","canal","instagram"].includes(h)){i.btn=h;i.h="";return}
+if(s.id=="grupos"&&h.includes(" · ")){const p=h.split(" · ");i.cat=p.shift();h=p.join(" · ")}
+if(s.id=="grupos"||s.id=="tiendas"){const m=h.match(TMR);let o="",r=h;if(m){o=m[1];r=h.slice(0,m.index).replace(/[ ,]+$/,"")}const dy=DAYR.test(r);i.dias=dy?r:"";i.hora=o;i.h=dy?"":r}}));return c}
+
+const DN=["Lunes","Martes","Miércoles","Jueves","Viernes","Sábado","Domingo"],WK="lunes|martes|miercoles|jueves|viernes|sabado|domingo".split("|");
+function daysOf(tx){const n=tx.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,""),on=new Set(),W=WK.join("|"),r=n.match(new RegExp(`(${W})s? a (${W})`));
+if(r)for(let d=WK.indexOf(r[1]);d<=WK.indexOf(r[2]);d++)on.add(d);(n.match(new RegExp(W,"g"))||[]).forEach(d=>on.add(WK.indexOf(d)));if(/todos los dias/.test(n))WK.forEach((_,d)=>on.add(d));return on}
+function fmtDays(on){const a=[...on].sort((x,y)=>x-y);if(!a.length)return"";if(a.length==7)return"Todos los días";if(a.length>=3&&a[a.length-1]-a[0]==a.length-1)return DN[a[0]]+" a "+DN[a[a.length-1]];const n=a.map(d=>DN[d]);return n.length>1?n.slice(0,-1).join(", ")+" y "+n[n.length-1]:n[0]}
+const t24=tx=>[...tx.matchAll(/(\d{1,2})(?::(\d{2}))?\s*([ap])\.?\s?m/gi)].slice(0,2).map(x=>String(+x[1]%12+(x[3].toLowerCase()=="p"?12:0)).padStart(2,"0")+":"+(x[2]||"00"));
+const f12=v=>{const[h,m]=v.split(":").map(Number);return (h%12||12)+(m?":"+String(m).padStart(2,"0"):"")+" "+(h<12?"am":"pm")};
+const mk=(t,cls,html)=>{const e=document.createElement(t);if(cls)e.className=cls;if(html!=null)e.innerHTML=html;return e};
+const mark=()=>{dirty=1;$("pub").textContent="Publicar cambios ●"};
+function B(t,cls,fn){const b=mk("button",cls,t);b.type="button";b.onclick=fn;return b}
+function F(o,k,label,opt={}){const l=mk("label",0,esc(label)),i=mk(opt.area?"textarea":"input");if(opt.ph)i.placeholder=opt.ph;i.value=o[k]||"";i.oninput=()=>{o[k]=i.value;mark();if(opt.on)opt.on()};l.append(i);l.i=i;return l}
+function SEL(o,k,label,opts){const l=mk("label",0,esc(label)),s=mk("select");opts.forEach(([v,t])=>{const p=mk("option",0,esc(t));p.value=v;s.append(p)});s.value=o[k]||"";s.onchange=()=>{o[k]=s.value;mark()};l.append(s);return l}
+function mv(a,i,d){const j=i+d;if(j<0||j>=a.length)return;[a[i],a[j]]=[a[j],a[i]];mark();render()}
+function sched(it){const fs=mk("fieldset","sc","<legend>Horario</legend>");
+const dI=F(it,"dias","Días",{ph:"Ej. Lunes, miércoles y viernes",on:()=>paint()}),ch=mk("div","dc");
+const paint=()=>{const on=daysOf(it.dias||"");[...ch.children].forEach((b,d)=>b.classList.toggle("on",on.has(d)))};
+DN.forEach((n,d)=>ch.append(B(n.slice(0,2),"",()=>{const on=daysOf(it.dias||"");on.has(d)?on.delete(d):on.add(d);it.dias=fmtDays(on);dI.i.value=it.dias;mark();paint()})));paint();
+const hI=F(it,"hora","Hora",{ph:"Ej. 11 am a 8 pm"}),[a,b]=t24(it.hora||""),tp=mk("div","tp"),ta=mk("input"),tb=mk("input");ta.type=tb.type="time";ta.value=a||"";tb.value=b||"";
+ta.onchange=tb.onchange=()=>{if(ta.value&&tb.value){it.hora=f12(ta.value)+" a "+f12(tb.value);hI.i.value=it.hora;mark()}};
+tp.append(mk("span",0,"Desde"),ta,mk("span",0,"hasta"),tb);
+fs.append(dI,mk("div",0,"Toca los días para marcarlos o escríbelos arriba"),ch,hI,tp,F(it,"h","Nota (opcional)",{ph:"Ej. Cuando se solicite"}));return fs}
+function itemBox(s,it,ii){const box=mk("div","it"),hd=mk("div","ih",`<b>Elemento ${ii+1} de ${s.items.length}</b>`),sp=mk("span",0,esc(it.t||"Sin nombre")),ib=mk("div","ib");
+ib.append(B("↑","s",()=>mv(s.items,ii,-1)),B("↓","s",()=>mv(s.items,ii,1)),B("Quitar","x",()=>{if(confirm("¿Quitar este elemento?")){s.items.splice(ii,1);mark();render()}}));hd.append(sp,ib);
+const bd=mk("div","bd");bd.append(F(it,"t","Nombre",{on:()=>sp.textContent=it.t||"Sin nombre"}),F(it,"d","Descripción",{area:1}));
+if(s.id=="grupos")bd.append(SEL(it,"cat","Tipo de grupo",[["","Sin tipo"],["Fijo","Fijo"],["Opcional","Opcional"],["Temporal","Temporal"]]));
+if(s.id=="grupos"||s.id=="tiendas")bd.append(sched(it));
+if(s.id=="bienvenida")bd.append(SEL(it,"btn","Botón que se muestra",[["","Ninguno"],["zepeto","Uniformes de Zepeto"],["canal","Canal Corazón de bruja"],["instagram","Instagram"]]));
+const ap=mk("details","ap","<summary>Imagen e ícono</summary>");ap.append(F(it,"img","Imagen (ruta, ej. images/gringotts.webp)"),F(it,"ic","Ícono emoji (para tarjetas sin foto)"));bd.append(ap);
+box.append(hd,bd,mk("div","ie","Fin del elemento "+(ii+1)));return box}
+function sec(key,num,title,sub,id){const d=mk("details","sec");d.id=id;d.open=open.has(key);d.ontoggle=()=>d.open?open.add(key):open.delete(key);
+d.innerHTML=`<summary><i>${num}</i><span>${esc(title)}</span><small>${esc(sub||"")}</small></summary>`;const n=mk("div","in");d.append(n);m.append(d);return n}
+function render(){m.innerHTML="";const toc=mk("div","toc","<b>Ir a:</b>");
+const go=(k,id)=>{open.add(k);render();setTimeout(()=>$(id).scrollIntoView({behavior:"smooth"}),60)};
+toc.append(B("Enlaces","",()=>go(c.links,"s-l")),B("Portada","",()=>go(c.hero,"s-h")));c.sections.forEach((s,i)=>toc.append(B(s.titulo||"Sección "+(i+1),"",()=>go(s,"s"+i))));m.append(toc);
+const l=sec(c.links,"★","Enlaces","","s-l");[["registro","Registro estudiantil"],["canal","Canal Corazón de bruja"],["instagram","Instagram"],["zepeto_ninos","Zepeto niños"],["zepeto_ninas","Zepeto niñas"]].forEach(([k,t])=>l.append(F(c.links,k,t)));l.append(mk("div","se","Fin de Enlaces"));
+const h=sec(c.hero,"★","Portada","","s-h");h.append(F(c.hero,"titulo","Título"),F(c.hero,"texto","Texto",{area:1}),mk("div","se","Fin de Portada"));
+c.sections.forEach((s,si)=>{const n=sec(s,si+1,s.titulo||"Sin título",s.items.length+" elementos","s"+si),dt=mk("div","dat","<h4>Datos de la sección</h4>");
+dt.append(F(s,"id","Identificador (sin espacios ni acentos)"),F(s,"titulo","Título"),F(s,"intro","Introducción",{area:1}));n.append(dt,mk("h4","lh","Elementos de «"+esc(s.titulo)+"»"));
+s.items.forEach((it,ii)=>n.append(itemBox(s,it,ii)));
+n.append(B("+ Agregar elemento a esta sección","add",()=>{s.items.push({t:"",d:""});open.add(s);mark();render()}));
+const r=mk("div","row");r.append(B("↑ Subir sección","s",()=>mv(c.sections,si,-1)),B("↓ Bajar sección","s",()=>mv(c.sections,si,1)),B("Quitar sección","x",()=>{if(confirm("¿Quitar la sección completa?")){c.sections.splice(si,1);mark();render()}}));
+n.append(r,mk("div","se","Fin de la sección «"+esc(s.titulo)+"»"))});
+m.append(B("+ Agregar sección nueva","add",()=>{const s={id:"nueva",titulo:"Nueva sección",intro:"",items:[]};c.sections.push(s);open.add(s);mark();render()}))}
+function view(ok){$("lg").style.display=ok?"none":"block";$("hd").style.display=ok?"flex":"none";m.style.display=ok?"block":"none";$("bar").style.display=ok?"flex":"none"}
+function logout(t){P("tok","");view(false);$("le").textContent=t||""}
+const remote=(r,b,t)=>fetch(`https://api.github.com/repos/${r}/contents/content.json?ref=${b}`,{headers:{Authorization:"Bearer "+t,Accept:"application/vnd.github.raw+json"},cache:"no-store"});
+async function login(){const r=(DEF_REPO||$("rp").value).trim(),t=$("tk").value.trim();if(!r||!t){$("le").textContent="Escribe el repositorio y el token.";return}
+$("le").textContent="Verificando…";try{const x=await remote(r,DEF_BRANCH,t);if(!x.ok)throw 0;c=norm(await x.json());P("repo",r);P("branch",DEF_BRANCH);P("tok",t);$("tk").value="";$("le").textContent="";view(true);render()}catch(e){$("le").textContent="No se pudo entrar. Revisa el repositorio y el token."}}
+async function start(){if(DEF_REPO)$("rpw").style.display="none";if(!S("tok")||!S("repo"))return view(false);
+try{const x=await remote(S("repo"),S("branch")||"main",S("tok"));if(!x.ok)throw 0;c=norm(await x.json());view(true);render()}catch(e){logout("Tu sesión caducó o el token ya no sirve. Vuelve a entrar.")}}
+async function getSha(b){const h=H(),r=await fetch(api()+"?ref="+b,{headers:h,cache:"no-store"});
 if(!r.ok){let j={};try{j=await r.json()}catch(e){}throw new Error("No se pudo leer el repositorio ("+r.status+"): "+(j.message||"sin detalle"))}
-const j=await r.json();if(j&&j.sha)return j.sha;
-const d=await fetch(`https://api.github.com/repos/${S("repo")}/contents?ref=${b}`,{headers:h,cache:"no-store"});
-if(d.ok){const l=await d.json(),f=Array.isArray(l)&&l.find(x=>x.name==="content.json"&&x.type==="file");if(f)return f.sha}
-throw new Error("GitHub no devolvió el identificador de content.json. Respuesta: "+Object.keys(j||{}).join(", "))}
+const j=await r.json();if(j&&j.sha)return j.sha;const d=await fetch(`https://api.github.com/repos/${S("repo")}/contents?ref=${b}`,{headers:h,cache:"no-store"});
+if(d.ok){const l=await d.json(),f=Array.isArray(l)&&l.find(x=>x.name==="content.json"&&x.type==="file");if(f)return f.sha}throw new Error("GitHub no devolvió el identificador de content.json.")}
+$("out").onclick=()=>{if(!dirty||confirm("Hay cambios sin publicar. ¿Cerrar sesión de todos modos?"))logout("")};$("go").onclick=login;
 $("pub").onclick=async()=>{if(!S("repo")||!S("tok"))return logout("Inicia sesión para publicar.");say("Publicando…",1);
 try{const b=S("branch")||"main",sha=await getSha(b),body=btoa(unescape(encodeURIComponent(JSON.stringify(c,null,1))));
 const p=await fetch(api(),{method:"PUT",headers:H(),body:JSON.stringify({message:"Actualiza contenido desde el panel",content:body,sha,branch:b})});
-if(!p.ok){let j={};try{j=await p.json()}catch(e){}throw new Error("No se pudo guardar ("+p.status+"): "+(j.message||"sin detalle")+(p.status==403||p.status==404?". Revisa que el token tenga permiso Contents: Read and write.":""))}
-say("Publicado. La página se actualiza en 1 a 2 minutos.")}catch(e){say(e.message)}};
+if(!p.ok){let j={};try{j=await p.json()}catch(e){}throw new Error("No se pudo guardar ("+p.status+"): "+(j.message||"sin detalle"))}
+dirty=0;$("pub").textContent="Publicar cambios";say("Publicado. La página se actualiza en 1 a 2 minutos.")}catch(e){say(e.message)}};
+onbeforeunload=e=>{if(dirty){e.preventDefault();e.returnValue=""}};
 start();
 </script></body></html>
