@@ -1,4 +1,4 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Panel HMR</title>
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Edicion de HMR</title>
 <style>
 body{margin:0;font:16px/1.5 system-ui,sans-serif;background:#f3ead8;color:#2b1d12;padding-bottom:90px}
 header{position:sticky;top:0;background:#2b1d12;color:#fff;padding:10px 12px;display:flex;gap:8px;flex-wrap:wrap;align-items:center;z-index:2}
@@ -14,7 +14,7 @@ input,textarea{width:100%;font:inherit;padding:8px;border:1px solid #bda985;bord
 #msg{position:fixed;left:0;right:0;bottom:0;padding:14px;background:#2b1d12;color:#fff;margin:0;display:none}
 #lg{display:none;max-width:420px;margin:12vh 16px;padding:20px;background:#fbf5e8;border:1px solid #d9c7a3;border-radius:10px}@media(min-width:460px){#lg{margin:12vh auto}}#lg h1{margin:0 0 6px;font-size:22px}#le{color:#a3261e;font-weight:700;min-height:1.5em}</style></head><body>
 <div id="lg"><h1>Panel HMR</h1><p>Entra con tu token para editar la página.</p><div id="rpw"><label>Repositorio (usuario/repositorio)</label><input id="rp" autocomplete="off"></div><label>Token</label><input id="tk" type="password" autocomplete="off"><div class="row"><button id="go">Entrar</button></div><p id="le"></p></div>
-<header id="hd" style="display:none"><b>Panel HMR</b><button id="pub">Publicar cambios</button><button class="alt" id="dl">Descargar JSON</button><button class="alt" id="out">Cerrar sesión</button></header>
+<header id="hd" style="display:none"><b>Panel HMR</b><button id="pub">Publicar cambios</button><button class="alt" id="out">Cerrar sesión</button></header>
 <main id="m" style="display:none">Cargando…</main><p id="msg"></p>
 <script>
 let c;const $=i=>document.getElementById(i),open=new Set();
@@ -52,10 +52,14 @@ async function start(){if(DEF_REPO)$("rpw").style.display="none";
 if(!S("tok")||!S("repo"))return view(false);
 try{const x=await remote(S("repo"),S("branch")||"main",S("tok"));if(!x.ok)throw 0;c=await x.json();view(true);render()}catch(e){logout("Tu sesión caducó o el token ya no sirve. Vuelve a entrar.")}}
 $("out").onclick=()=>logout("");$("go").onclick=login;
-$("dl").onclick=()=>{const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([JSON.stringify(c,null,1)],{type:"application/json"}));a.download="content.json";a.click()};
+async function getSha(b){const h=H();const r=await fetch(api()+"?ref="+b,{headers:h,cache:"no-store"});
+if(!r.ok){let j={};try{j=await r.json()}catch(e){}throw new Error("No se pudo leer el repositorio ("+r.status+"): "+(j.message||"sin detalle"))}
+const j=await r.json();if(j&&j.sha)return j.sha;
+const d=await fetch(`https://api.github.com/repos/${S("repo")}/contents?ref=${b}`,{headers:h,cache:"no-store"});
+if(d.ok){const l=await d.json(),f=Array.isArray(l)&&l.find(x=>x.name==="content.json"&&x.type==="file");if(f)return f.sha}
+throw new Error("GitHub no devolvió el identificador de content.json. Respuesta: "+Object.keys(j||{}).join(", "))}
 $("pub").onclick=async()=>{if(!S("repo")||!S("tok"))return logout("Inicia sesión para publicar.");say("Publicando…",1);
-try{const b=S("branch")||"main",g=await fetch(api()+"?ref="+b,{headers:H()});if(!g.ok){let j={};try{j=await g.json()}catch(e){}throw new Error("No se pudo leer el repositorio ("+g.status+"): "+(j.message||"sin detalle"))}
-const sha=(await g.json()).sha,body=btoa(unescape(encodeURIComponent(JSON.stringify(c,null,1))));
+try{const b=S("branch")||"main",sha=await getSha(b),body=btoa(unescape(encodeURIComponent(JSON.stringify(c,null,1))));
 const p=await fetch(api(),{method:"PUT",headers:H(),body:JSON.stringify({message:"Actualiza contenido desde el panel",content:body,sha,branch:b})});
 if(!p.ok){let j={};try{j=await p.json()}catch(e){}throw new Error("No se pudo guardar ("+p.status+"): "+(j.message||"sin detalle")+(p.status==403||p.status==404?". Revisa que el token tenga permiso Contents: Read and write.":""))}
 say("Publicado. La página se actualiza en 1 a 2 minutos.")}catch(e){say(e.message)}};
