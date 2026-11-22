@@ -6,7 +6,7 @@
 1. UNA persona crea cuenta en github.com y un repositorio (privado o público); sube el contenido de la carpeta.
 2. En netlify.com: "Import from Git" y elige ese repositorio (sin comando de build). Cada cambio se publica solo.
 3. En GitHub: Settings > Developer settings > Fine-grained tokens > Generate. Limita el token a ESE repositorio con permiso "Contents: Read and write". Ponle fecha de caducidad.
-4. Entra a tusitio/admin > "Conexión" y escribe usuario/repositorio, rama (main) y token. Edita y pulsa "Publicar cambios".
+4. Entra a tusitio/admin, escribe usuario/repositorio y el token (solo la primera vez en cada dispositivo; queda guardado hasta "Cerrar sesión"). Edita y pulsa "Publicar cambios". Para que los editores solo pongan el token, escribe el repositorio en DEF_REPO dentro de admin/index.html.
 ## Seguridad
 Quien tenga el token puede modificar el contenido de ese repositorio. Compártelo solo con editores de confianza y revócalo en GitHub si se filtra. No lo pegues en grupos.
 ## Google

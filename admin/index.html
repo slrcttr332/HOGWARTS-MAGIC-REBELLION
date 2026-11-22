@@ -33,7 +33,7 @@ c.sections.forEach((s,si)=>{const d=document.createElement("details");d.open=ope
 d.innerHTML=`<summary>${(s.titulo||"Sin título").replace(/</g,"&lt;")}</summary>`;
 d.append(F(s,"id","Identificador (sin espacios ni acentos)"),F(s,"titulo","Título"),F(s,"intro","Introducción",1));
 s.items.forEach((it,ii)=>{const w=document.createElement("div");w.className="it";
-w.append(F(it,"t","Nombre"),F(it,"d","Descripción",1),F(it,"h","Horario o etiqueta (opcional)"));
+w.append(F(it,"t","Nombre"),F(it,"d","Descripción",1),F(it,"h","Horario o etiqueta (opcional)"),F(it,"img","Imagen (ruta, ej. images/gringotts.webp)"));
 const r=document.createElement("div");r.className="row";
 r.append(B("↑","s",()=>mv(s.items,ii,-1)),B("↓","s",()=>mv(s.items,ii,1)),B("Quitar","x s",()=>{if(confirm("¿Quitar este elemento?")){s.items.splice(ii,1);render()}}));w.append(r);d.append(w)});
 const r=document.createElement("div");r.className="row";
