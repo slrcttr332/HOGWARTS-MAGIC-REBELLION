@@ -54,10 +54,10 @@ try{const x=await remote(S("repo"),S("branch")||"main",S("tok"));if(!x.ok)throw 
 $("out").onclick=()=>logout("");$("go").onclick=login;
 $("dl").onclick=()=>{const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([JSON.stringify(c,null,1)],{type:"application/json"}));a.download="content.json";a.click()};
 $("pub").onclick=async()=>{if(!S("repo")||!S("tok"))return logout("Inicia sesión para publicar.");say("Publicando…",1);
-try{const b=S("branch")||"main",g=await fetch(api()+"?ref="+b,{headers:H()});if(!g.ok)throw new Error("No se pudo leer el repositorio ("+g.status+"). Revisa repo, rama y token.");
+try{const b=S("branch")||"main",g=await fetch(api()+"?ref="+b,{headers:H()});if(!g.ok){let j={};try{j=await g.json()}catch(e){}throw new Error("No se pudo leer el repositorio ("+g.status+"): "+(j.message||"sin detalle"))}
 const sha=(await g.json()).sha,body=btoa(unescape(encodeURIComponent(JSON.stringify(c,null,1))));
 const p=await fetch(api(),{method:"PUT",headers:H(),body:JSON.stringify({message:"Actualiza contenido desde el panel",content:body,sha,branch:b})});
-if(!p.ok)throw new Error("No se pudo guardar ("+p.status+"). El token necesita permiso de escritura en Contents.");
+if(!p.ok){let j={};try{j=await p.json()}catch(e){}throw new Error("No se pudo guardar ("+p.status+"): "+(j.message||"sin detalle")+(p.status==403||p.status==404?". Revisa que el token tenga permiso Contents: Read and write.":""))}
 say("Publicado. La página se actualiza en 1 a 2 minutos.")}catch(e){say(e.message)}};
 start();
 </script></body></html>
