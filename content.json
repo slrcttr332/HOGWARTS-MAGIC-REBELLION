@@ -123,14 +123,14 @@
     },
     {
      "t": "Spam",
-     "d": "Invitar gente al colegio compartiendo su link en redes sociales y grupos: \n- Facebook\n- Instagram\n- YouTube\n- WhatsApp",
+     "d": "Invitar gente al colegio compartiendo su link en redes sociales y grupos: Facebook, Instagram, YouTube, Grupos de WhatsApp",
      "h": "",
      "img": "",
      "ic": "📣"
     },
     {
      "t": "Lumos y Nox",
-     "d": "Los hechizos que abren y cierran el día en el colegio.\n- Lumos marca el inicio a las 8 am\n- Nox el final a las 10 pm.",
+     "d": "Los hechizos que abren y cierran el día en el colegio.\nLumos marca el inicio a las 8 am, Nox el final a las 10 pm.",
      "h": "",
      "img": "",
      "ic": "🌙"
@@ -166,86 +166,122 @@
     {
      "t": "Gran Comedor",
      "d": "El punto de encuentro de todos los alumnos. Aquí convivimos y se realizan los flashes. \n- Si sales de la comunidad, el colegio te saca de este grupo.",
-     "h": "Fijo · Lunes a Domingo, 8am a 10pm",
+     "h": "",
      "img": "",
-     "ic": ""
+     "ic": "",
+     "cat": "Fijo",
+     "dias": "Lunes a Domingo",
+     "hora": "8am a 10pm"
     },
     {
      "t": "Sala de retos",
      "d": "Envía aquí tu reto junto con tu emoji y tu mascota.",
-     "h": "Fijo · Lunes a Viernes, 8am a 8am",
+     "h": "",
      "img": "",
-     "ic": ""
+     "ic": "",
+     "cat": "Fijo",
+     "dias": "Lunes a Viernes",
+     "hora": "8am a 8am"
     },
     {
      "t": "Dinámicas Mágicas",
      "d": "Aquí se hacen las dinámicas del colegio, siempre con horario.",
-     "h": "Fijo · Disponible en la Descripción del Grupo",
+     "h": "Disponible en la Descripción del Grupo",
      "img": "images/dinamicas.webp",
-     "ic": ""
+     "ic": "",
+     "cat": "Fijo",
+     "dias": "Lunes a Viernes",
+     "hora": ""
     },
     {
      "t": "Arena de Duelos",
      "d": "Mídete en duelo con quien quieras. Si ganas, obtienes puntos.",
-     "h": "Fijo · Lunes a Viernes",
+     "h": "",
      "img": "images/duelos.webp",
-     "ic": ""
+     "ic": "",
+     "cat": "Fijo",
+     "dias": "Lunes a Viernes",
+     "hora": ""
     },
     {
      "t": "Sonorus",
      "d": "Para quienes quieren cantar. Envías 5 audios de 30 segundos cada uno.",
-     "h": "Opcional · NoSeLaVerdad",
+     "h": "Jueves de Karaoke y Sábado Puntos Doble (Con Escoba)",
      "img": "images/sonorus.webp",
-     "ic": ""
+     "ic": "",
+     "cat": "Opcional",
+     "dias": "Lunes a Sábado",
+     "hora": "12 pm a 12 pm"
     },
     {
      "t": "Gringotts",
      "d": "Tu cuenta se crea al registrarte. \nAquí depositas, consultas tu saldo y transfieres galeones.",
-     "h": "Opcional · Lunes, Miércoles y Viernes, 11am a 8pm",
+     "h": "Miércoles NO hay Consultas de Saldo",
      "img": "images/gringotts.webp",
-     "ic": ""
+     "ic": "",
+     "cat": "Opcional",
+     "dias": "Lunes, Miércoles y Viernes",
+     "hora": "11am a 8pm"
     },
     {
      "t": "Paga Dulces",
      "d": "Solo para quienes compraron dulces.",
-     "h": "Opcional · Lunes a Sábado",
+     "h": "",
      "img": "images/paga-dulces.webp",
-     "ic": ""
+     "ic": "",
+     "cat": "Opcional",
+     "dias": "Lunes a Sábado",
+     "hora": "8 am a 10 pm"
     },
     {
      "t": "Bar Las 3 Escobas",
      "d": "Abre después del Nox y ahí puedes jugar plato. Cierra con el Lumos.",
-     "h": "Opcional · Lunes a Sábado, 10pm a 8am",
+     "h": "",
      "img": "images/bar.webp",
-     "ic": ""
+     "ic": "",
+     "cat": "Opcional",
+     "dias": "Lunes a Sábado",
+     "hora": "10pm a 8am"
     },
     {
      "t": "Postulaciones",
      "d": "Solo para dejar ideas o postularte a las vacantes que estén abiertas.",
-     "h": "Opcional · Cuando haya vacantes abiertas",
+     "h": "Cuando haya vacantes abiertas",
      "img": "",
-     "ic": ""
+     "ic": "",
+     "cat": "Opcional",
+     "dias": "",
+     "hora": ""
     },
     {
-     "t": "Santuario de los libros",
+     "t": "Santuario de los Libros",
      "d": "Un espacio para leer. Envías 5 audios de 1 minuto cada uno.",
-     "h": "Temporal · Miércoles y sábados",
+     "h": "Sábados Puntos Dobles (Con Escoba)",
      "img": "images/santuario.webp",
-     "ic": ""
+     "ic": "",
+     "cat": "Temporal",
+     "dias": "Miércoles y sábados",
+     "hora": "8 am a 10 pm"
     },
     {
-     "t": "Cabina",
+     "t": "Cabina Fotográfica",
      "d": "Aquí se envían los Zepeto con la temática de la copa y de la revista.",
-     "h": "Temporal · Cuándo se solicite",
+     "h": "Cuándo se solicite",
      "img": "",
-     "ic": ""
+     "ic": "",
+     "cat": "Temporal",
+     "dias": "Viernes y Sábado",
+     "hora": ""
     },
     {
      "t": "Aula de clases",
      "d": "Aquí se imparten las clases. Se agrega 2 veces por semana y cada clase es sobre una materia mágica de Harry Potter ",
-     "h": "Temporal · 2 veces por semana",
+     "h": "2 veces por semana",
      "img": "images/aula.webp",
-     "ic": ""
+     "ic": "",
+     "cat": "Temporal",
+     "dias": "",
+     "hora": ""
     }
    ]
   },
@@ -257,44 +293,56 @@
     {
      "t": "Honeydukes",
      "d": "Dulces de todo tipo.\nLas instrucciones para regalarlos te llegan al privado.",
-     "h": "Todos los domingos, 8 am a 5 pm",
+     "h": "",
      "img": "images/honeydukes.webp",
-     "ic": ""
+     "ic": "",
+     "dias": "Todos los domingos",
+     "hora": "8 am a 5 pm"
     },
     {
      "t": "Borgin & Burke",
      "d": "Aquí están los productos más codiciados del colegio. \nAl comprar, recibes por privado las instrucciones para usarlos.",
-     "h": "Domingos, Día de entrega de copa, 8 am a 5 pm",
+     "h": "",
      "img": "images/borgin.webp",
-     "ic": ""
+     "ic": "",
+     "dias": "Domingos, Día de entrega de copa",
+     "hora": "8 am a 5 pm"
     },
     {
      "t": "Suitcase Scamander's",
      "d": "Mascotas. \nNecesitas haber participado en una copa con nosotros para obtener una.",
-     "h": "Jueves de la 2da semana de copa",
+     "h": "",
      "img": "images/suitcase.webp",
-     "ic": ""
+     "ic": "",
+     "dias": "Jueves de la 2da semana de copa",
+     "hora": "11 am a 8 pm"
     },
     {
      "t": "Guardería",
      "d": "Aquí cuidas la mascota que obtuviste en la maleta.",
-     "h": "11am a 8pm",
+     "h": "",
      "img": "images/guarderia.webp",
-     "ic": ""
+     "ic": "",
+     "dias": "Lunes a Viernes",
+     "hora": "11am a 8pm"
     },
     {
      "t": "Escobas de calidad Madame Umbridge",
-     "d": "Desde una Nimbus 2000 hasta una Moscarda.",
-     "h": "11 am a 8pm",
+     "d": "Desde una Nimbus 2000 hasta una Moscarda, usa tu escoba en Karaoke, Biblioteca y el Flash Especiall de Quidditch",
+     "h": "",
      "img": "images/escobas.webp",
-     "ic": ""
+     "ic": "",
+     "dias": "Jueves y Viernes",
+     "hora": "11 am a 8pm"
     },
     {
      "t": "Ollivander's",
-     "d": "Varitas. \nRecuerda que la varita escoge al mago.",
-     "h": "11am a 8pm",
+     "d": "Varitas. Usa tu varia en Dinámicas Mágicas\nRecuerda que la varita escoge al mago.",
+     "h": "",
      "img": "images/ollivanders.webp",
-     "ic": ""
+     "ic": "",
+     "dias": "Lunes",
+     "hora": "11am a 8pm"
     }
    ]
   },
@@ -370,7 +418,7 @@
     },
     {
      "t": "Amor es Amor",
-     "d": "Temporada LGBT que une el amor de todas las formas. También cuenta para bodas.",
+     "d": "Temporada LGBT+ que une el amor de todas las formas. También cuenta para bodas.",
      "img": "",
      "ic": "🏳️‍🌈"
     },
@@ -382,7 +430,7 @@
     },
     {
      "t": "Temporadas especiales",
-     "d": "Halloween, Día de Muertos y Navidad: un mes entero de actividades, con minis concursos como calabacita, poema a la muerte y cosplays.",
+     "d": "Halloween, Día de Muertos y Navidad: un mes entero de actividades que incluyen mini concursos como calabacita, poema a la muerte, cosplays y mucho más.",
      "img": "",
      "ic": "🎃"
     }
@@ -396,23 +444,26 @@
     {
      "t": "Uniforme en Zepeto",
      "d": "Descarga Zepeto (Android y iOS), vístete con nuestro uniforme y envía una foto de tu avatar.",
-     "h": "zepeto",
+     "h": "",
      "img": "",
-     "ic": ""
+     "ic": "",
+     "btn": "zepeto"
     },
     {
      "t": "Corazón de bruja",
      "d": "La revista oficial: chismes, moda, música y películas. Sigue el canal y envía captura.",
-     "h": "canal",
+     "h": "",
      "img": "",
-     "ic": ""
+     "ic": "",
+     "btn": "canal"
     },
     {
      "t": "Instagram",
      "d": "Mira copas pasadas, certificados y más. Síguenos y envía captura.",
-     "h": "instagram",
+     "h": "",
      "img": "",
-     "ic": ""
+     "ic": "",
+     "btn": "instagram"
     }
    ]
   },
@@ -423,19 +474,19 @@
    "items": [
     {
      "t": "¿Qué es Hogwarts Magic Rebellion?",
-     "d": "Un colegio de rol de Harry Potter en WhatsApp. Es un proyecto de fans, sin fines de lucro.",
+     "d": "Un colegio de actividades de Harry Potter en WhatsApp. Es un proyecto de fans, sin fines de lucro.",
      "img": "",
      "ic": ""
     },
     {
      "t": "¿Para quién es?",
-     "d": "Está pensado para mayores de 18 años de toda Latinoamérica.",
+     "d": "Está pensado para magos y brujas de toda Latinoamérica.",
      "img": "",
      "ic": ""
     },
     {
      "t": "¿Puedo salir de la comunidad?",
-     "d": "No. Si sales de la comunidad, te saca automáticamente del Gran Comedor.",
+     "d": "No. Si sales de la comunidad, te saca automáticamente del Gran Comedor y de los demás grupos.",
      "img": "",
      "ic": ""
     },
@@ -447,7 +498,7 @@
     },
     {
      "t": "¿Dónde veo los avisos?",
-     "d": "Pasamos anuncios todos los días sobre las actividades. Mantente atento al Gran Comedor.",
+     "d": "Pasamos anuncios todos los días sobre las actividades. Mantente atento a los anuncios de la Comunidad.",
      "img": "",
      "ic": ""
     }
