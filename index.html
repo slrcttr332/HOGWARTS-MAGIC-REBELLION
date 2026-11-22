@@ -67,13 +67,22 @@ h1,h2,h3{text-transform:uppercase;letter-spacing:.03em}
 .ht{font-weight:700;font-size:16px;line-height:1.35}
 .ic{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-size:22px;background:linear-gradient(135deg,var(--acc),var(--gold));margin-bottom:10px;box-shadow:0 3px 10px rgba(0,0,0,.25)}
 @media(prefers-reduced-motion:no-preference){.c{transition:transform .2s}.c:hover{transform:translateY(-3px)}}
+.scroll{display:block;width:fit-content;margin:0 auto 18px;text-decoration:none;color:var(--acc);font-weight:700}
+.scroll svg{width:170px;height:auto;display:block;margin:auto;filter:drop-shadow(0 6px 10px rgba(0,0,0,.35))}.scroll span{display:block;margin-top:4px;font-size:16px}
+@media(prefers-reduced-motion:no-preference){.scroll svg{animation:sw 3.2s ease-in-out infinite}}@keyframes sw{50%{transform:translateY(-6px) rotate(-1.5deg)}}
+.chips{list-style:none;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;padding:0;margin:30px auto 0;max-width:700px}
+.chips li{display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--gold);border-radius:99px;padding:6px 16px 6px 6px;font-weight:700;font-size:16px;box-shadow:var(--sh)}
+.chips i{font-style:normal;min-width:34px;height:34px;padding:0 4px;border-radius:99px;display:grid;place-items:center;background:#2b1d12;color:#f6dc9a;font:700 14px Alegreya,serif;border:1px solid var(--gold)}
+.ic{background:#2b1d12;color:#f6dc9a;border:2px solid var(--gold);font-family:Cinzel,serif;font-weight:800}
+.m.p{aspect-ratio:4/5}.ht.mu{color:var(--mut);font-weight:500;font-style:italic}
 </style></head><body>
 <div class="bar"><nav id="nav"></nav><button id="tg" aria-label="Cambiar modo claro u oscuro">◐</button></div>
 <header class="hero"><div class="wrap"><img class="logo" src="logo.png" alt="Logo de Hogwarts Magic Rebellion">
 <div class="house" aria-hidden="true"><i style="background:var(--sl)"></i><i style="background:var(--hu)"></i><i style="background:var(--rv)"></i><i style="background:var(--gr)"></i></div>
 <h1 id="ht">Te sentirás como en un verdadero Hogwarts</h1><p id="hp"></p>
-<a class="btn" data-l="registro" href="#">Registrarme</a><a class="btn alt" href="#empezar">Cómo funciona</a>
-<ul class="stats"><li><b>4 casas</b>compiten por la copa</li><li><b>2 semanas</b>dura cada copa</li><li><b>+18</b>colegio para adultos</li><li><b>8 am · 10 pm</b>Lumos y Nox, hora de México</li></ul></div></header>
+<a class="scroll" data-l="registro" href="#" aria-label="Toca el pergamino para registrarte"><svg viewBox="0 0 200 120" aria-hidden="true"><rect x="26" y="22" width="148" height="76" fill="#ead7a8" stroke="#8a5a1e" stroke-width="2"/><g stroke="#8a5a1e" stroke-opacity=".55" stroke-width="3" stroke-linecap="round"><path d="M48 44h104M48 58h104M48 72h70"/></g><rect x="12" y="14" width="30" height="92" rx="15" fill="#d9bc7e" stroke="#8a5a1e" stroke-width="2"/><rect x="158" y="14" width="30" height="92" rx="15" fill="#d9bc7e" stroke="#8a5a1e" stroke-width="2"/><ellipse cx="27" cy="22" rx="9" ry="5" fill="#b8892b" opacity=".6"/><ellipse cx="173" cy="22" rx="9" ry="5" fill="#b8892b" opacity=".6"/><circle cx="140" cy="82" r="11" fill="#a3261e" stroke="#6e1410" stroke-width="2"/><path d="M140 76l2 4 4 .5-3 3 .8 4.2-3.8-2-3.8 2 .8-4.2-3-3 4-.5z" fill="#f6dc9a"/></svg><span>Toca el pergamino para registrarte</span></a>
+<div><a class="btn" data-l="registro" href="#">Registrarme</a><a class="btn alt" href="#empezar">Cómo funciona</a></div>
+<ul class="chips"><li><i>🏰</i>4 casas</li><li><i>🏆</i>Copa de 2 semanas</li><li><i>+18</i>Solo adultos</li><li><i>🌙</i>Lumos 8 am · Nox 10 pm</li></ul></div></header>
 <main id="main"></main>
 <footer>Proyecto de fans sin fines de lucro. Hogwarts Magic Rebellion no tiene relación con Warner Bros. Entertainment ni con J. K. Rowling. Harry Potter y sus nombres son marcas de sus respectivos dueños.<br>Dirigido por Abi Umbridge y Valery Cobblepot.</footer>
 <div class="cta"><a class="btn" data-l="registro" href="#">Registrarme ahora</a></div>
@@ -86,7 +95,7 @@ function sch(tx){const n=tx.toLowerCase().normalize("NFD").replace(/[\u0300-\u03
 const r=n.match(new RegExp(`(${W})s? a (${W})`));if(r)for(let d=DN.indexOf(r[1]);d<=DN.indexOf(r[2]);d++)on.add(d);
 (n.match(new RegExp(`(${W})`,"g"))||[]).forEach(d=>on.add(DN.indexOf(d)));
 const dy=on.size?`<div class="dy" aria-hidden="true">${DL.map((l,d)=>`<i${on.has(d)?' class="on"':""}>${l}</i>`).join("")}</div>`:"";
-return `<div class="hr"><div class="hh"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Horario</div>${dy}<div class="ht">${E(cap(tx))}</div></div>`}
+return `<div class="hr"><div class="hh"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Horario</div>${dy}<div class="ht${/^por definir/i.test(tx)?" mu":""}">${E(cap(tx))}</div></div>`}
 const K=["var(--sl)","var(--hu)","var(--rv)","var(--gr)"];
 fetch("content.json").then(r=>r.json()).then(c=>{
 const L=c.links;ht.textContent=c.hero.titulo;hp.textContent=c.hero.texto;
@@ -99,7 +108,7 @@ else if(h=="canal"){f=bt(L.canal,"Seguir canal");h=""}else if(h=="instagram"){f=
 let cat="",tm=h;if(s.id=="grupos"){const p=h.split(" · ");cat=p[0];tm=p.slice(1).join(" · ")}
 if(tm)f=sch(tm)+f;
 const k=s.id=="casas"?K[n]:"",ic=!M&&i.ic?`<div class="ic">${E(i.ic)}</div>`:"";
-const m=M?`<div class="m">${i.img?`<img src="${E(i.img)}" alt="Imagen de ${E(i.t)}" loading="lazy" width="720" height="720">`:`<b>${E(i.t.trim()[0])}</b>`}${cat?`<span class="bd">${E(cat)}</span>`:""}</div>`:"";
+const m=M?`<div class="m${s.id=="casas"?" p":""}">${i.img?`<img src="${E(i.img)}" alt="Imagen de ${E(i.t)}" loading="lazy" width="720" height="720">`:`<b>${E(i.t.trim()[0])}</b>`}${cat?`<span class="bd">${E(cat)}</span>`:""}</div>`:"";
 return `<article class="c" data-c="${E(cat)}"${k?` style="--k:${k}"`:""}>${m}<div class="b">${ic}<h3>${E(i.t)}</h3><p>${E(cap(i.d))}</p>${f?`<div class="f">${f}</div>`:""}</div></article>`}
 main.innerHTML=c.sections.map((s,n)=>{const M=s.id=="casas"||s.items.some(i=>i.img);
 const cats=s.id=="grupos"?[...new Set(s.items.map(i=>(i.h||"").split(" · ")[0]).filter(Boolean))]:[];

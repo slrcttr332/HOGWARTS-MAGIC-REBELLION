@@ -18,19 +18,22 @@
    "items": [
     {
      "t": "Regístrate",
-     "d": "Toca el botón de registro. Te lleva al grupo de registro estudiantil.",
+     "d": "Toca el pergamino o el botón de registro y entra al grupo de registro estudiantil.",
+     "h": "",
      "img": "",
      "ic": "1"
     },
     {
      "t": "Elige tu emoji",
-     "d": "Tu emoji es tu marca personal. Lo usarás en retos, flashes, dinámicas y clases. Avisa a tu casa cuando ya lo tengas.",
+     "d": "Tu emoji es tu marca personal y lo usarás en retos, flashes, dinámicas y clases. Cuando lo tengas, avisa a tu casa.",
+     "h": "",
      "img": "",
      "ic": "2"
     },
     {
      "t": "Participa",
-     "d": "Todas las actividades te dan puntos. Puedes empezar con pocos y consultar a tu directiva de casa cuando tengas dudas.",
+     "d": "Cada actividad te da puntos. Empieza con las que quieras y consulta a tu directiva de casa si tienes dudas.",
+     "h": "",
      "img": "",
      "ic": "3"
     }
@@ -43,30 +46,30 @@
    "items": [
     {
      "t": "Slytherin",
-     "d": "La casa verde. Astucia y ambición.",
+     "d": "Ambición, astucia y liderazgo. Aquí brillan quienes van por lo que quieren y saben cómo conseguirlo.",
      "h": "",
-     "img": "",
+     "img": "images/casa-slytherin.webp",
      "ic": ""
     },
     {
      "t": "Hufflepuff",
-     "d": "La casa amarilla. Lealtad y esfuerzo.",
+     "d": "Lealtad, trabajo en equipo y justicia. Aquí se valora a quienes se esfuerzan y cuidan a los suyos.",
      "h": "",
-     "img": "",
+     "img": "images/casa-hufflepuff.webp",
      "ic": ""
     },
     {
      "t": "Ravenclaw",
-     "d": "La casa azul. Ingenio y sabiduría.",
+     "d": "Ingenio, curiosidad y sabiduría. Aquí destacan quienes piensan distinto y siempre quieren aprender.",
      "h": "",
-     "img": "",
+     "img": "images/casa-ravenclaw.webp",
      "ic": ""
     },
     {
      "t": "Gryffindor",
-     "d": "La casa roja. Valentía y audacia.",
+     "d": "Valentía, audacia y determinación. Aquí avanzan quienes se atreven a dar el primer paso.",
      "h": "",
-     "img": "",
+     "img": "images/casa-gryffindor.webp",
      "ic": ""
     }
    ]
@@ -74,23 +77,26 @@
   {
    "id": "puntos",
    "titulo": "Cómo ganar puntos",
-   "intro": "Hay muchas formas de ayudar a tu casa.",
+   "intro": "Todas las actividades dan puntos. Puedes empezar con pocos y sumar poco a poco.",
    "items": [
     {
      "t": "Actividades principales",
-     "d": "Hacer el reto, participar en dinámicas, participar en flashes y hacer spam.",
+     "d": "Las más frecuentes del colegio: retos, dinámicas, flashes y spam.",
+     "h": "",
      "img": "",
      "ic": "⭐"
     },
     {
      "t": "Otras actividades",
-     "d": "Cantar, leer, entregar dulces, jugar en el bar, asistir a clases y participar en torneos.",
+     "d": "También suman puntos cantar, leer, entregar dulces, jugar en el bar, tomar clases y competir en torneos.",
+     "h": "",
      "img": "",
      "ic": "✨"
     },
     {
      "t": "La copa",
-     "d": "Es el periodo para ganar puntos. Dura 2 semanas y, al terminar, la casa con más puntos levanta la copa.",
+     "d": "Es el periodo para ganar puntos y dura 2 semanas. Al terminar, la casa con más puntos levanta la copa de las casas.",
+     "h": "",
      "img": "",
      "ic": "🏆"
     }
@@ -103,37 +109,50 @@
    "items": [
     {
      "t": "Flash",
-     "d": "Actividad corta y fácil de 10 a 20 minutos.",
+     "d": "Actividad rápida y fácil. Dura entre 10 y 20 minutos.",
+     "h": "",
      "img": "",
      "ic": "⚡"
     },
     {
      "t": "Dinámica",
-     "d": "Actividad de unos 30 minutos con una mecánica y reglas a seguir.",
+     "d": "Actividad con reglas y una mecánica a seguir. Dura alrededor de 30 minutos.",
+     "h": "",
      "img": "",
      "ic": "🎭"
     },
     {
      "t": "Spam",
-     "d": "Compartir el link del colegio e invitar gente en Facebook, Instagram, YouTube y grupos de WhatsApp.",
+     "d": "Invitar gente al colegio compartiendo su link en redes sociales y grupos: Facebook, Instagram, YouTube o WhatsApp.",
+     "h": "",
      "img": "",
      "ic": "📣"
     },
     {
      "t": "Lumos y Nox",
-     "d": "Marcan el inicio y el fin del día en el grupo. Lumos es a las 8:00 am y Nox a las 10:00 pm, hora de México.",
+     "d": "Los hechizos que abren y cierran el día en el colegio. Lumos marca el inicio a las 8 am y Nox el final a las 10 pm.",
+     "h": "",
      "img": "",
      "ic": "🌙"
     },
     {
      "t": "Directivos",
-     "d": "Prefecto de casa, subjefe y jefe de casa. Son quienes te guían.",
+     "d": "El equipo que te guía en tu casa: prefecto, subjefe y jefe de casa. Acude a ellos con cualquier duda.",
+     "h": "",
      "img": "",
      "ic": "🛡️"
     },
     {
+     "t": "Galeones",
+     "d": "La moneda del colegio. Se guardan en Gringotts y se gastan en las tiendas.",
+     "h": "",
+     "img": "",
+     "ic": "💰"
+    },
+    {
      "t": "CDCM",
-     "d": "Cuidado de criaturas mágicas, una de las clases.",
+     "d": "Cuidado de criaturas mágicas, una de las clases del colegio.",
+     "h": "",
      "img": "",
      "ic": "🐉"
     }
@@ -146,42 +165,42 @@
    "items": [
     {
      "t": "Gran Comedor",
-     "d": "Grupo principal. Aquí convivimos todos los alumnos y se hacen los flashes. Si sales de la comunidad, te saca del Gran Comedor.",
-     "h": "Fijo",
+     "d": "El punto de encuentro de todos los alumnos. Aquí convivimos y se realizan los flashes. Si sales de la comunidad, el colegio te saca de este grupo.",
+     "h": "Fijo · Por definir",
      "img": "",
      "ic": ""
     },
     {
      "t": "Sala de retos",
-     "d": "Envía tu reto con tu emoji y tu mascota.",
-     "h": "Fijo",
+     "d": "Envía aquí tu reto junto con tu emoji y tu mascota.",
+     "h": "Fijo · Por definir",
      "img": "",
      "ic": ""
     },
     {
      "t": "Dinámicas Mágicas",
-     "d": "Dinámicas con horario.",
-     "h": "Fijo",
+     "d": "Aquí se hacen las dinámicas del colegio, siempre con horario.",
+     "h": "Fijo · Por definir",
      "img": "images/dinamicas.webp",
      "ic": ""
     },
     {
      "t": "Arena de Duelos",
-     "d": "Mídete en duelo con cualquiera. Si ganas, obtienes puntos.",
-     "h": "Fijo",
+     "d": "Mídete en duelo con quien quieras. Si ganas, obtienes puntos.",
+     "h": "Fijo · Por definir",
      "img": "images/duelos.webp",
      "ic": ""
     },
     {
      "t": "Sonorus",
-     "d": "Para cantar. Envías 5 audios de 30 segundos cada uno.",
-     "h": "Opcional",
+     "d": "Para quienes quieren cantar. Envías 5 audios de 30 segundos cada uno.",
+     "h": "Opcional · Por definir",
      "img": "images/sonorus.webp",
      "ic": ""
     },
     {
      "t": "Gringotts",
-     "d": "Al registrarte tienes una cuenta. Aquí depositas y transfieres galeones.",
+     "d": "Tu cuenta se crea al registrarte. Aquí depositas y transfieres galeones.",
      "h": "Opcional · Lunes, miércoles y viernes",
      "img": "images/gringotts.webp",
      "ic": ""
@@ -195,21 +214,21 @@
     },
     {
      "t": "Bar Las 3 Escobas",
-     "d": "Abre después del Nox y puedes jugar plato. Cierra al Lumos.",
-     "h": "Opcional",
+     "d": "Abre después del Nox y ahí puedes jugar plato. Cierra con el Lumos.",
+     "h": "Opcional · Desde el Nox hasta el Lumos",
      "img": "images/bar.webp",
      "ic": ""
     },
     {
      "t": "Postulaciones",
-     "d": "Solo para dejar ideas o postular a vacantes abiertas.",
-     "h": "Opcional",
+     "d": "Solo para dejar ideas o postularte a las vacantes que estén abiertas.",
+     "h": "Opcional · Cuando haya vacantes abiertas",
      "img": "",
      "ic": ""
     },
     {
      "t": "Santuario de los libros",
-     "d": "Puedes leer y enviar 5 audios de 1 minuto cada uno.",
+     "d": "Un espacio para leer. Envías 5 audios de 1 minuto cada uno.",
      "h": "Temporal · Miércoles y sábados",
      "img": "images/santuario.webp",
      "ic": ""
@@ -223,8 +242,8 @@
     },
     {
      "t": "Aula de clases",
-     "d": "Se agrega 2 veces por semana. Cada clase dura 30 minutos.",
-     "h": "Temporal",
+     "d": "Aquí se imparten las clases. Se agrega 2 veces por semana y cada clase dura 30 minutos.",
+     "h": "Temporal · 2 veces por semana",
      "img": "images/aula.webp",
      "ic": ""
     }
@@ -244,8 +263,8 @@
     },
     {
      "t": "Borgin & Burke",
-     "d": "Los productos más top. Las instrucciones de uso te llegan al privado.",
-     "h": "Cada 2 semanas o el día de entrega de copa, 8 am a 5 pm",
+     "d": "Aquí están los productos más codiciados del colegio. Al comprar, recibes por privado las instrucciones para usarlos.",
+     "h": "Domingos, cada 2 semanas o el día de entrega de copa, 8 am a 5 pm",
      "img": "images/borgin.webp",
      "ic": ""
     },
@@ -259,21 +278,21 @@
     {
      "t": "Guardería",
      "d": "Aquí cuidas la mascota que obtuviste en la maleta.",
-     "h": "",
+     "h": "Por definir",
      "img": "images/guarderia.webp",
      "ic": ""
     },
     {
      "t": "Escobas de calidad Madame Umbridge",
      "d": "Desde una Nimbus 2000 hasta una Moscarda.",
-     "h": "",
+     "h": "Por definir",
      "img": "images/escobas.webp",
      "ic": ""
     },
     {
      "t": "Ollivander's",
      "d": "Varitas. Recuerda que la varita escoge al mago.",
-     "h": "",
+     "h": "Por definir",
      "img": "images/ollivanders.webp",
      "ic": ""
     }
@@ -301,13 +320,28 @@
   {
    "id": "duelos",
    "titulo": "Duelos",
-   "intro": "En la Arena de Duelos cada victoria te acerca a la gloria.",
+   "intro": "En la Arena de Duelos puedes medirte con cualquier alumno. Cada victoria te suma puntos y te acerca a la gloria, y al subir de nivel obtienes beneficios.",
    "items": [
     {
-     "t": "Niveles",
-     "d": "Aprendiz, Experto y Maestro. Subir de nivel te da beneficios.",
+     "t": "Aprendiz",
+     "d": "El punto de partida de todo duelista. Cada victoria te acerca al siguiente nivel.",
+     "h": "",
+     "img": "",
+     "ic": "🗡️"
+    },
+    {
+     "t": "Experto",
+     "d": "Para quien ya demostró que sabe pelear. Subir a este nivel te da beneficios.",
+     "h": "",
      "img": "",
      "ic": "⚔️"
+    },
+    {
+     "t": "Maestro",
+     "d": "El nivel más alto de la Arena, reservado a los duelistas más victoriosos del colegio.",
+     "h": "",
+     "img": "",
+     "ic": "👑"
     }
    ]
   },
@@ -348,7 +382,7 @@
     },
     {
      "t": "Temporadas especiales",
-     "d": "Halloween, Día de Muertos y Navidad: un mes entero de actividades, con mini concursos como calabacita, poema a la muerte y cosplays.",
+     "d": "Halloween, Día de Muertos y Navidad: un mes entero de actividades, con minis concursos como calabacita, poema a la muerte y cosplays.",
      "img": "",
      "ic": "🎃"
     }
