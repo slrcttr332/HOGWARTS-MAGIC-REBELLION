@@ -196,12 +196,12 @@
     {
      "t": "Arena de Duelos",
      "d": "Mídete en duelo con quien quieras. Si ganas, obtienes puntos.",
-     "h": "",
+     "h": "Límite de 10 Duelos Diarios",
      "img": "images/duelos.webp",
      "ic": "",
      "cat": "Fijo",
      "dias": "Lunes a Viernes",
-     "hora": ""
+     "hora": "8 am a 10 pm"
     },
     {
      "t": "Sonorus",
@@ -250,8 +250,8 @@
      "img": "",
      "ic": "",
      "cat": "Opcional",
-     "dias": "",
-     "hora": ""
+     "dias": "Todos los días",
+     "hora": "12 pm a 12 pm"
     },
     {
      "t": "Santuario de los Libros",
@@ -302,19 +302,19 @@
     {
      "t": "Borgin & Burke",
      "d": "Aquí están los productos más codiciados del colegio. \nAl comprar, recibes por privado las instrucciones para usarlos.",
-     "h": "",
+     "h": "Día de la Entrega de Copa",
      "img": "images/borgin.webp",
      "ic": "",
-     "dias": "Domingos, Día de entrega de copa",
+     "dias": "Domingo",
      "hora": "8 am a 5 pm"
     },
     {
      "t": "Suitcase Scamander's",
      "d": "Mascotas. \nNecesitas haber participado en una copa con nosotros para obtener una.",
-     "h": "",
+     "h": "2da Semana de Copa",
      "img": "images/suitcase.webp",
      "ic": "",
-     "dias": "Jueves de la 2da semana de copa",
+     "dias": "Jueves",
      "hora": "11 am a 8 pm"
     },
     {
