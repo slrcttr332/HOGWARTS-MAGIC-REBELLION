@@ -17,19 +17,22 @@
    "intro": "Tres pasos y ya eres alumno.",
    "items": [
     {
-     "t": "1. Regístrate",
+     "t": "Regístrate",
      "d": "Toca el botón de registro. Te lleva al grupo de registro estudiantil.",
-     "img": ""
+     "img": "",
+     "ic": "1"
     },
     {
-     "t": "2. Elige tu emoji",
+     "t": "Elige tu emoji",
      "d": "Tu emoji es tu marca personal. Lo usarás en retos, flashes, dinámicas y clases. Avisa a tu casa cuando ya lo tengas.",
-     "img": ""
+     "img": "",
+     "ic": "2"
     },
     {
-     "t": "3. Participa",
+     "t": "Participa",
      "d": "Todas las actividades te dan puntos. Puedes empezar con pocos y consultar a tu directiva de casa cuando tengas dudas.",
-     "img": ""
+     "img": "",
+     "ic": "3"
     }
    ]
   },
@@ -42,25 +45,29 @@
      "t": "Slytherin",
      "d": "La casa verde. Astucia y ambición.",
      "h": "",
-     "img": ""
+     "img": "",
+     "ic": ""
     },
     {
      "t": "Hufflepuff",
      "d": "La casa amarilla. Lealtad y esfuerzo.",
      "h": "",
-     "img": ""
+     "img": "",
+     "ic": ""
     },
     {
      "t": "Ravenclaw",
      "d": "La casa azul. Ingenio y sabiduría.",
      "h": "",
-     "img": ""
+     "img": "",
+     "ic": ""
     },
     {
      "t": "Gryffindor",
      "d": "La casa roja. Valentía y audacia.",
      "h": "",
-     "img": ""
+     "img": "",
+     "ic": ""
     }
    ]
   },
@@ -72,17 +79,20 @@
     {
      "t": "Actividades principales",
      "d": "Hacer el reto, participar en dinámicas, participar en flashes y hacer spam.",
-     "img": ""
+     "img": "",
+     "ic": "⭐"
     },
     {
      "t": "Otras actividades",
      "d": "Cantar, leer, entregar dulces, jugar en el bar, asistir a clases y participar en torneos.",
-     "img": ""
+     "img": "",
+     "ic": "✨"
     },
     {
      "t": "La copa",
      "d": "Es el periodo para ganar puntos. Dura 2 semanas y, al terminar, la casa con más puntos levanta la copa.",
-     "img": ""
+     "img": "",
+     "ic": "🏆"
     }
    ]
   },
@@ -94,32 +104,38 @@
     {
      "t": "Flash",
      "d": "Actividad corta y fácil de 10 a 20 minutos.",
-     "img": ""
+     "img": "",
+     "ic": "⚡"
     },
     {
      "t": "Dinámica",
      "d": "Actividad de unos 30 minutos con una mecánica y reglas a seguir.",
-     "img": ""
+     "img": "",
+     "ic": "🎭"
     },
     {
      "t": "Spam",
      "d": "Compartir el link del colegio e invitar gente en Facebook, Instagram, YouTube y grupos de WhatsApp.",
-     "img": ""
+     "img": "",
+     "ic": "📣"
     },
     {
      "t": "Lumos y Nox",
      "d": "Marcan el inicio y el fin del día en el grupo. Lumos es a las 8:00 am y Nox a las 10:00 pm, hora de México.",
-     "img": ""
+     "img": "",
+     "ic": "🌙"
     },
     {
      "t": "Directivos",
      "d": "Prefecto de casa, subjefe y jefe de casa. Son quienes te guían.",
-     "img": ""
+     "img": "",
+     "ic": "🛡️"
     },
     {
      "t": "CDCM",
      "d": "Cuidado de criaturas mágicas, una de las clases.",
-     "img": ""
+     "img": "",
+     "ic": "🐉"
     }
    ]
   },
@@ -132,73 +148,85 @@
      "t": "Gran Comedor",
      "d": "Grupo principal. Aquí convivimos todos los alumnos y se hacen los flashes. Si sales de la comunidad, te saca del Gran Comedor.",
      "h": "Fijo",
-     "img": ""
+     "img": "",
+     "ic": ""
     },
     {
      "t": "Sala de retos",
      "d": "Envía tu reto con tu emoji y tu mascota.",
      "h": "Fijo",
-     "img": ""
+     "img": "",
+     "ic": ""
     },
     {
      "t": "Dinámicas Mágicas",
      "d": "Dinámicas con horario.",
      "h": "Fijo",
-     "img": "images/dinamicas.webp"
+     "img": "images/dinamicas.webp",
+     "ic": ""
     },
     {
      "t": "Arena de Duelos",
      "d": "Mídete en duelo con cualquiera. Si ganas, obtienes puntos.",
      "h": "Fijo",
-     "img": "images/duelos.webp"
+     "img": "images/duelos.webp",
+     "ic": ""
     },
     {
      "t": "Sonorus",
      "d": "Para cantar. Envías 5 audios de 30 segundos cada uno.",
      "h": "Opcional",
-     "img": "images/sonorus.webp"
+     "img": "images/sonorus.webp",
+     "ic": ""
     },
     {
      "t": "Gringotts",
      "d": "Al registrarte tienes una cuenta. Aquí depositas y transfieres galeones.",
      "h": "Opcional · Lunes, miércoles y viernes",
-     "img": "images/gringotts.webp"
+     "img": "images/gringotts.webp",
+     "ic": ""
     },
     {
      "t": "Paga Dulces",
      "d": "Solo para quienes compraron dulces.",
      "h": "Opcional · Lunes a sábado",
-     "img": "images/paga-dulces.webp"
+     "img": "images/paga-dulces.webp",
+     "ic": ""
     },
     {
      "t": "Bar Las 3 Escobas",
      "d": "Abre después del Nox y puedes jugar plato. Cierra al Lumos.",
      "h": "Opcional",
-     "img": "images/bar.webp"
+     "img": "images/bar.webp",
+     "ic": ""
     },
     {
      "t": "Postulaciones",
      "d": "Solo para dejar ideas o postular a vacantes abiertas.",
      "h": "Opcional",
-     "img": ""
+     "img": "",
+     "ic": ""
     },
     {
      "t": "Santuario de los libros",
      "d": "Puedes leer y enviar 5 audios de 1 minuto cada uno.",
      "h": "Temporal · Miércoles y sábados",
-     "img": "images/santuario.webp"
+     "img": "images/santuario.webp",
+     "ic": ""
     },
     {
      "t": "Cabina",
      "d": "Aquí se envían los Zepeto con la temática de la copa y de la revista.",
      "h": "Temporal · Jueves, viernes y sábado",
-     "img": ""
+     "img": "",
+     "ic": ""
     },
     {
      "t": "Aula de clases",
      "d": "Se agrega 2 veces por semana. Cada clase dura 30 minutos.",
      "h": "Temporal",
-     "img": "images/aula.webp"
+     "img": "images/aula.webp",
+     "ic": ""
     }
    ]
   },
@@ -211,37 +239,43 @@
      "t": "Honeydukes",
      "d": "Dulces. Las instrucciones para regalarlos te llegan al privado.",
      "h": "Todos los domingos, 8 am a 5 pm",
-     "img": "images/honeydukes.webp"
+     "img": "images/honeydukes.webp",
+     "ic": ""
     },
     {
      "t": "Borgin & Burke",
      "d": "Los productos más top. Las instrucciones de uso te llegan al privado.",
      "h": "Cada 2 semanas o el día de entrega de copa, 8 am a 5 pm",
-     "img": "images/borgin.webp"
+     "img": "images/borgin.webp",
+     "ic": ""
     },
     {
      "t": "Suitcase Scamander's",
      "d": "Mascotas. Necesitas haber participado en una copa con nosotros para obtener una.",
      "h": "Jueves de la segunda semana de copa",
-     "img": "images/suitcase.webp"
+     "img": "images/suitcase.webp",
+     "ic": ""
     },
     {
      "t": "Guardería",
      "d": "Aquí cuidas la mascota que obtuviste en la maleta.",
      "h": "",
-     "img": "images/guarderia.webp"
+     "img": "images/guarderia.webp",
+     "ic": ""
     },
     {
      "t": "Escobas de calidad Madame Umbridge",
      "d": "Desde una Nimbus 2000 hasta una Moscarda.",
      "h": "",
-     "img": "images/escobas.webp"
+     "img": "images/escobas.webp",
+     "ic": ""
     },
     {
      "t": "Ollivander's",
      "d": "Varitas. Recuerda que la varita escoge al mago.",
      "h": "",
-     "img": "images/ollivanders.webp"
+     "img": "images/ollivanders.webp",
+     "ic": ""
     }
    ]
   },
@@ -253,12 +287,14 @@
     {
      "t": "Materias",
      "d": "Herbología, Pociones, Runas Antiguas y CDCM.",
-     "img": ""
+     "img": "",
+     "ic": "📚"
     },
     {
      "t": "TIMOS",
      "d": "Cada 5 clases de una materia hay examen. Los primeros en obtener las mejores calificaciones reciben el carnet de TIMO.",
-     "img": ""
+     "img": "",
+     "ic": "📜"
     }
    ]
   },
@@ -270,7 +306,8 @@
     {
      "t": "Niveles",
      "d": "Aprendiz, Experto y Maestro. Subir de nivel te da beneficios.",
-     "img": ""
+     "img": "",
+     "ic": "⚔️"
     }
    ]
   },
@@ -282,32 +319,38 @@
     {
      "t": "Torneos por copa",
      "d": "Quidditch, Duelos, Carrera de escobas, Carrera de mascotas, Shutbumps, El Bosque Prohibido y Laberinto.",
-     "img": ""
+     "img": "",
+     "ic": "🏆"
     },
     {
      "t": "Casino",
      "d": "Las apuestas llegan en los mejores momentos. Ideal para gastar tus galeones.",
-     "img": "images/casino.webp"
+     "img": "",
+     "ic": "🎲"
     },
     {
      "t": "Bodas comunales",
      "d": "Un clásico de San Valentín. Son limitadas y exclusivas.",
-     "img": ""
+     "img": "",
+     "ic": "💍"
     },
     {
      "t": "Amor es Amor",
      "d": "Temporada LGBT que une el amor de todas las formas. También cuenta para bodas.",
-     "img": ""
+     "img": "",
+     "ic": "🏳️‍🌈"
     },
     {
      "t": "Aniversario",
      "d": "Cada 12 de febrero el colegio se viste de gala con premios, certificados y regalos.",
-     "img": ""
+     "img": "",
+     "ic": "🎂"
     },
     {
      "t": "Temporadas especiales",
      "d": "Halloween, Día de Muertos y Navidad: un mes entero de actividades, con minis concursos como calabacita, poema a la muerte y cosplays.",
-     "img": ""
+     "img": "",
+     "ic": "🎃"
     }
    ]
   },
@@ -320,19 +363,22 @@
      "t": "Uniforme en Zepeto",
      "d": "Descarga Zepeto (Android y iOS), vístete con nuestro uniforme y envía una foto de tu avatar.",
      "h": "zepeto",
-     "img": ""
+     "img": "",
+     "ic": ""
     },
     {
      "t": "Corazón de bruja",
      "d": "La revista oficial: chismes, moda, música y películas. Sigue el canal y envía captura.",
      "h": "canal",
-     "img": ""
+     "img": "",
+     "ic": ""
     },
     {
      "t": "Instagram",
      "d": "Mira copas pasadas, certificados y más. Síguenos y envía captura.",
      "h": "instagram",
-     "img": ""
+     "img": "",
+     "ic": ""
     }
    ]
   },
@@ -344,27 +390,32 @@
     {
      "t": "¿Qué es Hogwarts Magic Rebellion?",
      "d": "Un colegio de rol de Harry Potter en WhatsApp. Es un proyecto de fans, sin fines de lucro.",
-     "img": ""
+     "img": "",
+     "ic": ""
     },
     {
      "t": "¿Para quién es?",
      "d": "Está pensado para mayores de 18 años de toda Latinoamérica.",
-     "img": ""
+     "img": "",
+     "ic": ""
     },
     {
      "t": "¿Puedo salir de la comunidad?",
      "d": "No. Si sales de la comunidad, te saca automáticamente del Gran Comedor.",
-     "img": ""
+     "img": "",
+     "ic": ""
     },
     {
      "t": "¿Ocupa espacio en mi teléfono?",
      "d": "No. La comunidad es para tener mejor control y organización.",
-     "img": ""
+     "img": "",
+     "ic": ""
     },
     {
      "t": "¿Dónde veo los avisos?",
      "d": "Pasamos anuncios todos los días sobre las actividades. Mantente atento al Gran Comedor.",
-     "img": ""
+     "img": "",
+     "ic": ""
     }
    ]
   }
