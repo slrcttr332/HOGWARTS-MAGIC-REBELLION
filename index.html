@@ -75,6 +75,10 @@ h1,h2,h3{text-transform:uppercase;letter-spacing:.03em}
 .chips i{font-style:normal;min-width:34px;height:34px;padding:0 4px;border-radius:99px;display:grid;place-items:center;background:#2b1d12;color:#f6dc9a;font:700 14px Alegreya,serif;border:1px solid var(--gold)}
 .ic{background:#2b1d12;color:#f6dc9a;border:2px solid var(--gold);font-family:Cinzel,serif;font-weight:800}
 .m.p{aspect-ratio:4/5}.ht.mu{color:var(--mut);font-weight:500;font-style:italic}
+.rw{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-top:1px dashed var(--line)}.hh+.rw{border-top:0}
+.lb{flex:0 0 46px;font:700 11px Cinzel,serif;letter-spacing:.1em;text-transform:uppercase;color:var(--acc);padding-top:4px}.rw>div{flex:1;min-width:0}
+.tl{position:relative;height:8px;border-radius:9px;background:var(--bg2);border:1px solid var(--line);margin-top:6px;overflow:hidden}.tl u{position:absolute;top:0;bottom:0;background:var(--acc)}
+.nt{font-size:15px;color:var(--mut);font-style:italic;margin-top:6px}.hr .dy{margin-bottom:6px}
 </style></head><body>
 <div class="bar"><nav id="nav"></nav><button id="tg" aria-label="Cambiar modo claro u oscuro">◐</button></div>
 <header class="hero"><div class="wrap"><img class="logo" src="logo.png" alt="Logo de Hogwarts Magic Rebellion">
@@ -91,27 +95,35 @@ const R=document.documentElement,t=(()=>{try{return localStorage.getItem("t")}ca
 tg.onclick=()=>{const n=R.dataset.t=="dark"?"light":"dark";R.dataset.t=n;try{localStorage.setItem("t",n)}catch(e){}};
 const E=s=>String(s||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const DN=["lunes","martes","miercoles","jueves","viernes","sabado","domingo"],DL=["L","M","M","J","V","S","D"],cap=x=>x?x[0].toUpperCase()+x.slice(1):x;
-function sch(tx){const n=tx.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,""),on=new Set(),W=DN.join("|");
-const r=n.match(new RegExp(`(${W})s? a (${W})`));if(r)for(let d=DN.indexOf(r[1]);d<=DN.indexOf(r[2]);d++)on.add(d);
-(n.match(new RegExp(`(${W})`,"g"))||[]).forEach(d=>on.add(DN.indexOf(d)));
-const dy=on.size?`<div class="dy" aria-hidden="true">${DL.map((l,d)=>`<i${on.has(d)?' class="on"':""}>${l}</i>`).join("")}</div>`:"";
-return `<div class="hr"><div class="hh"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Horario</div>${dy}<div class="ht${/^por definir/i.test(tx)?" mu":""}">${E(cap(tx))}</div></div>`}
+function hrs(tx){const m=[...tx.matchAll(/(\d{1,2})(?::(\d{2}))?\s*([ap])\.?\s?m/gi)];if(m.length<2)return"";const f=x=>+x[1]%12+(x[3].toLowerCase()=="p"?12:0)+(+x[2]||0)/60,a=f(m[0]),b=f(m[1]),u=(l,r)=>`<u style="left:${l/24*100}%;width:${(r-l)/24*100}%"></u>`;return `<div class="tl" aria-hidden="true">${a==b?u(0,24):a<b?u(a,b):u(a,24)+u(0,b)}</div>`}
+function sch(i){const d=i.dias||"",o=i.hora||"",nt=i.h||"",n=d.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,""),on=new Set(),W=DN.join("|");
+const r=n.match(new RegExp(`(${W})s? a (${W})`));if(r)for(let x=DN.indexOf(r[1]);x<=DN.indexOf(r[2]);x++)on.add(x);
+(n.match(new RegExp(`(${W})`,"g"))||[]).forEach(x=>on.add(DN.indexOf(x)));if(/todos los dias/.test(n))DL.forEach((_,x)=>on.add(x));
+const dy=on.size?`<div class="dy" aria-hidden="true">${DL.map((l,x)=>`<i${on.has(x)?' class="on"':""}>${l}</i>`).join("")}</div>`:"";
+const row=(l,b)=>`<div class="rw"><span class="lb">${l}</span><div>${b}</div></div>`;let b="";
+if(d)b+=row("Días",dy+`<div class="ht">${E(cap(d))}</div>`);if(o)b+=row("Hora",`<div class="ht">${E(o)}</div>${hrs(o)}`);
+if(nt)b+=`<div class="nt">${E(cap(nt))}</div>`;if(!b)b=`<div class="ht mu">Por definir</div>`;
+return `<div class="hr"><div class="hh"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Horario</div>${b}</div>`}
+const TMR=/(\d{1,2}(?::\d{2})?\s?(?:am|pm)\s+a\s+\d{1,2}(?::\d{2})?\s?(?:am|pm))\s*$/i,DAYR=/lunes|martes|mi[eé]rcoles|jueves|viernes|s[aá]bado|domingo/i;
+function norm(c){c.sections.forEach(s=>s.items.forEach(i=>{if(["dias","hora","cat","btn"].some(k=>k in i))return;let h=i.h||"";
+if(["zepeto","canal","instagram"].includes(h)){i.btn=h;i.h="";return}
+if(s.id=="grupos"&&h.includes(" · ")){const p=h.split(" · ");i.cat=p.shift();h=p.join(" · ")}
+if(s.id=="grupos"||s.id=="tiendas"){const m=h.match(TMR);let o="",r=h;if(m){o=m[1];r=h.slice(0,m.index).replace(/[ ,]+$/,"")}const dy=DAYR.test(r);i.dias=dy?r:"";i.hora=o;i.h=dy?"":r}}));return c}
+
 const K=["var(--sl)","var(--hu)","var(--rv)","var(--gr)"];
-fetch("content.json").then(r=>r.json()).then(c=>{
+fetch("content.json").then(r=>r.json()).then(c=>{norm(c);
 const L=c.links;ht.textContent=c.hero.titulo;hp.textContent=c.hero.texto;
 document.querySelectorAll("[data-l]").forEach(a=>a.href=L[a.dataset.l]);
 nav.innerHTML=c.sections.map(s=>`<a href="#${E(s.id)}">${E(s.titulo)}</a>`).join("");
 const bt=(u,x)=>`<a class="btn" href="${E(u)}" target="_blank" rel="noopener">${x}</a>`;
-function card(s,i,n,M){let h=i.h||"",f="";
-if(h=="zepeto"){f=bt(L.zepeto_ninos,"Uniforme niños")+bt(L.zepeto_ninas,"Uniforme niñas");h=""}
-else if(h=="canal"){f=bt(L.canal,"Seguir canal");h=""}else if(h=="instagram"){f=bt(L.instagram,"Ir al Instagram");h=""}
-let cat="",tm=h;if(s.id=="grupos"){const p=h.split(" · ");cat=p[0];tm=p.slice(1).join(" · ")}
-if(tm)f=sch(tm)+f;
+function card(s,i,n,M){let f="";const b=i.btn||"",cat=i.cat||"";
+if(b=="zepeto")f=bt(L.zepeto_ninos,"Uniforme niños")+bt(L.zepeto_ninas,"Uniforme niñas");else if(b=="canal")f=bt(L.canal,"Seguir canal");else if(b=="instagram")f=bt(L.instagram,"Ir al Instagram");
+if(s.id=="grupos"||s.id=="tiendas"||i.dias||i.hora||i.h)f=sch(i)+f;
 const k=s.id=="casas"?K[n]:"",ic=!M&&i.ic?`<div class="ic">${E(i.ic)}</div>`:"";
 const m=M?`<div class="m${s.id=="casas"?" p":""}">${i.img?`<img src="${E(i.img)}" alt="Imagen de ${E(i.t)}" loading="lazy" width="720" height="720">`:`<b>${E(i.t.trim()[0])}</b>`}${cat?`<span class="bd">${E(cat)}</span>`:""}</div>`:"";
 return `<article class="c" data-c="${E(cat)}"${k?` style="--k:${k}"`:""}>${m}<div class="b">${ic}<h3>${E(i.t)}</h3><p>${E(cap(i.d))}</p>${f?`<div class="f">${f}</div>`:""}</div></article>`}
 main.innerHTML=c.sections.map((s,n)=>{const M=s.id=="casas"||s.items.some(i=>i.img);
-const cats=s.id=="grupos"?[...new Set(s.items.map(i=>(i.h||"").split(" · ")[0]).filter(Boolean))]:[];
+const cats=s.id=="grupos"?[...new Set(s.items.map(i=>i.cat).filter(Boolean))]:[];
 const fl=cats.length?`<div class="fl"><button class="on" data-c="">Todos</button>${cats.map(x=>`<button data-c="${E(x)}">${E(x)}</button>`).join("")}</div>`:"";
 const body=s.id=="faq"?s.items.map(i=>`<details><summary>${E(i.t)}</summary><p>${E(i.d)}</p></details>`).join(""):`${fl}<div class="g">${s.items.map((i,j)=>card(s,i,j,M)).join("")}</div>`;
 return `<section class="band" id="${E(s.id)}"><div class="wrap"><div class="sh"><span class="ey">${String(n+1).padStart(2,"0")}</span><h2>${E(s.titulo)}</h2>${s.intro?`<p class="intro">${E(s.intro)}</p>`:""}</div>${body}</div></section>`}).join("")});
