@@ -194,13 +194,33 @@
      "hora": ""
     },
     {
-     "t": "Arena de Duelos",
-     "d": "Mídete en duelo con quien quieras. Si ganas, obtienes puntos.",
-     "h": "Límite de 10 Duelos Diarios",
-     "img": "images/duelos.webp",
+     "t": "Gringotts",
+     "d": "Tu cuenta se crea al registrarte. \nAquí depositas, consultas tu saldo y transfieres galeones.",
+     "h": "Miércoles NO hay Consultas de Saldo",
+     "img": "images/gringotts.webp",
      "ic": "",
-     "cat": "Fijo",
+     "cat": "Opcional",
+     "dias": "Lunes, Miércoles y Viernes",
+     "hora": "11am a 8pm"
+    },
+    {
+     "t": "Bar Las 3 Escobas",
+     "d": "Abre después del Nox y ahí puedes jugar plato. Cierra con el Lumos.",
+     "h": "Viernes Actividad Especial",
+     "img": "images/bar.webp",
+     "ic": "",
+     "cat": "Opcional",
      "dias": "Lunes a Viernes",
+     "hora": "10pm a 8am"
+    },
+    {
+     "t": "Paga Dulces",
+     "d": "Solo para quienes compraron dulces.",
+     "h": "",
+     "img": "images/paga-dulces.webp",
+     "ic": "",
+     "cat": "Opcional",
+     "dias": "Lunes a Sábado",
      "hora": "8 am a 10 pm"
     },
     {
@@ -214,44 +234,14 @@
      "hora": "12 pm a 12 pm"
     },
     {
-     "t": "Gringotts",
-     "d": "Tu cuenta se crea al registrarte. \nAquí depositas, consultas tu saldo y transfieres galeones.",
-     "h": "Miércoles NO hay Consultas de Saldo",
-     "img": "images/gringotts.webp",
+     "t": "Arena de Duelos",
+     "d": "Mídete en duelo con quien quieras. Si ganas, obtienes puntos.",
+     "h": "Límite de 10 Duelos Diarios",
+     "img": "images/duelos.webp",
      "ic": "",
-     "cat": "Opcional",
-     "dias": "Lunes, Miércoles y Viernes",
-     "hora": "11am a 8pm"
-    },
-    {
-     "t": "Paga Dulces",
-     "d": "Solo para quienes compraron dulces.",
-     "h": "",
-     "img": "images/paga-dulces.webp",
-     "ic": "",
-     "cat": "Opcional",
-     "dias": "Lunes a Sábado",
-     "hora": "8 am a 10 pm"
-    },
-    {
-     "t": "Bar Las 3 Escobas",
-     "d": "Abre después del Nox y ahí puedes jugar plato. Cierra con el Lumos.",
-     "h": "",
-     "img": "images/bar.webp",
-     "ic": "",
-     "cat": "Opcional",
-     "dias": "Lunes a Sábado",
-     "hora": "10pm a 8am"
-    },
-    {
-     "t": "Postulaciones",
-     "d": "Solo para dejar ideas o postularte a las vacantes que estén abiertas.",
-     "h": "Cuando haya vacantes abiertas",
-     "img": "",
-     "ic": "",
-     "cat": "Opcional",
-     "dias": "Todos los días",
-     "hora": "12 pm a 12 pm"
+     "cat": "Fijo",
+     "dias": "Lunes a Viernes",
+     "hora": "11 am a 10 pm"
     },
     {
      "t": "Santuario de los Libros",
@@ -264,14 +254,14 @@
      "hora": "8 am a 10 pm"
     },
     {
-     "t": "Cabina Fotográfica",
-     "d": "Aquí se envían los Zepeto con la temática de la copa y de la revista.",
-     "h": "Cuándo se solicite",
+     "t": "Postulaciones",
+     "d": "Solo para dejar ideas o postularte a las vacantes que estén abiertas.",
+     "h": "Cuando haya vacantes abiertas",
      "img": "",
      "ic": "",
-     "cat": "Temporal",
-     "dias": "Viernes y Sábado",
-     "hora": ""
+     "cat": "Opcional",
+     "dias": "Todos los días",
+     "hora": "12 pm a 12 pm"
     },
     {
      "t": "Aula de clases",
@@ -281,6 +271,16 @@
      "ic": "",
      "cat": "Temporal",
      "dias": "",
+     "hora": ""
+    },
+    {
+     "t": "Cabina Fotográfica",
+     "d": "Aquí se envían los Zepeto con la temática de la copa y de la revista.",
+     "h": "Cuándo se solicite",
+     "img": "",
+     "ic": "",
+     "cat": "Temporal",
+     "dias": "Viernes y Sábado",
      "hora": ""
     }
    ]
@@ -309,6 +309,15 @@
      "hora": "8 am a 5 pm"
     },
     {
+     "t": "Ollivander's",
+     "d": "Varitas. Usa tu varia en Dinámicas Mágicas\nRecuerda que la varita escoge al mago.",
+     "h": "",
+     "img": "images/ollivanders.webp",
+     "ic": "",
+     "dias": "Lunes",
+     "hora": "11am a 8pm"
+    },
+    {
      "t": "Suitcase Scamander's",
      "d": "Mascotas. \nNecesitas haber participado en una copa con nosotros para obtener una.",
      "h": "2da Semana de Copa",
@@ -316,15 +325,6 @@
      "ic": "",
      "dias": "Jueves",
      "hora": "11 am a 8 pm"
-    },
-    {
-     "t": "Guardería",
-     "d": "Aquí cuidas la mascota que obtuviste en la maleta.",
-     "h": "",
-     "img": "images/guarderia.webp",
-     "ic": "",
-     "dias": "Lunes a Viernes",
-     "hora": "11am a 8pm"
     },
     {
      "t": "Escobas de calidad Madame Umbridge",
@@ -336,12 +336,12 @@
      "hora": "11 am a 8pm"
     },
     {
-     "t": "Ollivander's",
-     "d": "Varitas. Usa tu varia en Dinámicas Mágicas\nRecuerda que la varita escoge al mago.",
+     "t": "Guardería",
+     "d": "Aquí cuidas la mascota que obtuviste en la maleta.",
      "h": "",
-     "img": "images/ollivanders.webp",
+     "img": "images/guarderia.webp",
      "ic": "",
-     "dias": "Lunes",
+     "dias": "Lunes a Viernes",
      "hora": "11am a 8pm"
     }
    ]
