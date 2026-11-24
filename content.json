@@ -13,7 +13,7 @@
  "sections": [
   {
    "id": "empezar",
-   "titulo": "Cómo empezar",
+   "titulo": "Cómo Empezar",
    "intro": "Tres pasos y ya eres alumno.",
    "items": [
     {
@@ -41,7 +41,7 @@
   },
   {
    "id": "casas",
-   "titulo": "Las casas",
+   "titulo": "Las Casas",
    "intro": "Al entrar te unes a una de las cuatro casas. Todo lo que hagas suma puntos para ella.",
    "items": [
     {
@@ -76,7 +76,7 @@
   },
   {
    "id": "puntos",
-   "titulo": "Cómo ganar puntos",
+   "titulo": "¿Cómo Ganar Puntos?",
    "intro": "Todas las actividades dan puntos. \nPuedes empezar con pocos y sumar poco a poco.",
    "items": [
     {
@@ -395,7 +395,7 @@
   },
   {
    "id": "eventos",
-   "titulo": "Eventos especiales",
+   "titulo": "Eventos Especiales",
    "intro": "A lo largo del año ponemos a prueba tu valentía, astucia, justicia y sabiduría.",
    "items": [
     {
@@ -438,7 +438,7 @@
   },
   {
    "id": "bienvenida",
-   "titulo": "Puntos de bienvenida",
+   "titulo": "Puntos de Bienvenida",
    "intro": "Opcionales: te dan puntos extra al empezar. \nEnvía captura al Gran Comedor etiquetando a Abichuela.",
    "items": [
     {
@@ -458,7 +458,7 @@
      "btn": "zepeto"
     },
     {
-     "t": "Corazón de bruja",
+     "t": "Corazón de Bruja",
      "d": "La revista oficial: chismes, moda, música y películas. Sigue el canal y envía captura. \nETIQUETA A @ABICHUELA EN EL GRAN COMEDOR",
      "h": "",
      "img": "images/corazon-de-bruja.webp",
@@ -469,7 +469,7 @@
   },
   {
    "id": "faq",
-   "titulo": "Preguntas frecuentes",
+   "titulo": "Preguntas Frecuentes",
    "intro": "",
    "items": [
     {
