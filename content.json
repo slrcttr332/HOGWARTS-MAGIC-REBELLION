@@ -439,8 +439,16 @@
   {
    "id": "bienvenida",
    "titulo": "Puntos de bienvenida",
-   "intro": "Opcionales: te dan puntos extra al empezar. Envía captura al Gran Comedor etiquetando a Abichuela.",
+   "intro": "Opcionales: te dan puntos extra al empezar. \nEnvía captura al Gran Comedor etiquetando a Abichuela.",
    "items": [
+    {
+     "t": "Instagram",
+     "d": "Mira copas pasadas, certificados y más. Síguenos y envía captura. \nETIQUETA A @ABICHUELA EN EL GRAN COMEDOR",
+     "h": "",
+     "img": "images/instagram.webp",
+     "ic": "",
+     "btn": "instagram"
+    },
     {
      "t": "Uniforme en Zepeto",
      "d": "Descarga Zepeto (Android y iOS), vístete con nuestro uniforme y envía una foto de tu avatar. ETIQUETA A @ABICHUELA EN EL GRAN COMEDOR",
@@ -451,19 +459,11 @@
     },
     {
      "t": "Corazón de bruja",
-     "d": "La revista oficial: chismes, moda, música y películas. Sigue el canal y envía captura. ETIQUETA A @ABICHUELA EN EL GRAN COMEDOR",
+     "d": "La revista oficial: chismes, moda, música y películas. Sigue el canal y envía captura. \nETIQUETA A @ABICHUELA EN EL GRAN COMEDOR",
      "h": "",
      "img": "images/corazon-de-bruja.webp",
      "ic": "",
      "btn": "canal"
-    },
-    {
-     "t": "Instagram",
-     "d": "Mira copas pasadas, certificados y más. Síguenos y envía captura. ETIQUETA A @ABICHUELA EN EL GRAN COMEDOR",
-     "h": "",
-     "img": "images/instagram.webp",
-     "ic": "",
-     "btn": "instagram"
     }
    ]
   },
