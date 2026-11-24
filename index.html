@@ -86,7 +86,7 @@ h1,h2,h3{text-transform:uppercase;letter-spacing:.03em}
 <h1 id="ht">Te sentirás como en un verdadero Hogwarts</h1><p id="hp"></p>
 <a class="scroll" data-l="registro" href="#" aria-label="Toca el pergamino para registrarte"><svg viewBox="0 0 200 120" aria-hidden="true"><rect x="26" y="22" width="148" height="76" fill="#ead7a8" stroke="#8a5a1e" stroke-width="2"/><g stroke="#8a5a1e" stroke-opacity=".55" stroke-width="3" stroke-linecap="round"><path d="M48 44h104M48 58h104M48 72h70"/></g><rect x="12" y="14" width="30" height="92" rx="15" fill="#d9bc7e" stroke="#8a5a1e" stroke-width="2"/><rect x="158" y="14" width="30" height="92" rx="15" fill="#d9bc7e" stroke="#8a5a1e" stroke-width="2"/><ellipse cx="27" cy="22" rx="9" ry="5" fill="#b8892b" opacity=".6"/><ellipse cx="173" cy="22" rx="9" ry="5" fill="#b8892b" opacity=".6"/><circle cx="140" cy="82" r="11" fill="#a3261e" stroke="#6e1410" stroke-width="2"/><path d="M140 76l2 4 4 .5-3 3 .8 4.2-3.8-2-3.8 2 .8-4.2-3-3 4-.5z" fill="#f6dc9a"/></svg><span>Toca el pergamino para registrarte</span></a>
 <div><a class="btn" data-l="registro" href="#">Registrarme</a><a class="btn alt" href="#empezar">Cómo funciona</a></div>
-<ul class="chips"><li><i>🏰</i>4 casas</li><li><i>🏆</i>Copa de 2 semanas</li><li><i>+16</i>Comunidad</li></ul></div></header>
+<ul class="chips"><li><i>🏰</i>4 casas</li><li><i>🏆</i>Copa de 2 semanas</li><li><i>+18</i>Solo adultos</li><li><i>🌙</i>Lumos 8 am · Nox 10 pm</li></ul></div></header>
 <main id="main"></main>
 <footer>Proyecto de fans sin fines de lucro. Hogwarts Magic Rebellion no tiene relación con Warner Bros. Entertainment ni con J. K. Rowling. Harry Potter y sus nombres son marcas de sus respectivos dueños.<br>Dirigido por Abi Umbridge y Valery Cobblepot.</footer>
 <div class="cta"><a class="btn" data-l="registro" href="#">Registrarme ahora</a></div>
@@ -105,7 +105,8 @@ if(d)b+=row("Días",dy+`<div class="ht">${E(cap(d))}</div>`);if(o)b+=row("Hora",
 if(nt)b+=`<div class="nt">${E(cap(nt))}</div>`;if(!b)b=`<div class="ht mu">Por definir</div>`;
 return `<div class="hr"><div class="hh"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Horario</div>${b}</div>`}
 const TMR=/(\d{1,2}(?::\d{2})?\s?(?:am|pm)\s+a\s+\d{1,2}(?::\d{2})?\s?(?:am|pm))\s*$/i,DAYR=/lunes|martes|mi[eé]rcoles|jueves|viernes|s[aá]bado|domingo/i;
-function norm(c){c.sections.forEach(s=>s.items.forEach(i=>{if(["dias","hora","cat","btn"].some(k=>k in i))return;let h=i.h||"";
+const DEFIMG={"Gran Comedor":"images/gran-comedor.webp","Sala de retos":"images/sala-de-retos.webp","Postulaciones":"images/postulaciones.webp","Cabina Fotográfica":"images/cabina.webp","Cabina":"images/cabina.webp","Uniforme en Zepeto":"images/zepeto.webp","Corazón de bruja":"images/corazon-de-bruja.webp","Instagram":"images/instagram.webp"};
+function norm(c){c.sections.forEach(s=>s.items.forEach(i=>{if(!i.img&&DEFIMG[i.t])i.img=DEFIMG[i.t];if(["dias","hora","cat","btn"].some(k=>k in i))return;let h=i.h||"";
 if(["zepeto","canal","instagram"].includes(h)){i.btn=h;i.h="";return}
 if(s.id=="grupos"&&h.includes(" · ")){const p=h.split(" · ");i.cat=p.shift();h=p.join(" · ")}
 if(s.id=="grupos"||s.id=="tiendas"){const m=h.match(TMR);let o="",r=h;if(m){o=m[1];r=h.slice(0,m.index).replace(/[ ,]+$/,"")}const dy=DAYR.test(r);i.dias=dy?r:"";i.hora=o;i.h=dy?"":r}}));return c}
@@ -120,9 +121,9 @@ function card(s,i,n,M){let f="";const b=i.btn||"",cat=i.cat||"";
 if(b=="zepeto")f=bt(L.zepeto_ninos,"Uniforme niños")+bt(L.zepeto_ninas,"Uniforme niñas");else if(b=="canal")f=bt(L.canal,"Seguir canal");else if(b=="instagram")f=bt(L.instagram,"Ir al Instagram");
 if(s.id=="grupos"||s.id=="tiendas"||i.dias||i.hora||i.h)f=sch(i)+f;
 const k=s.id=="casas"?K[n]:"",ic=!M&&i.ic?`<div class="ic">${E(i.ic)}</div>`:"";
-const m=M?`<div class="m${s.id=="casas"?" p":""}">${i.img?`<img src="${E(i.img)}" alt="Imagen de ${E(i.t)}" loading="lazy" width="720" height="720">`:`<b>${E(i.t.trim()[0])}</b>`}${cat?`<span class="bd">${E(cat)}</span>`:""}</div>`:"";
+const m=M?`<div class="m${s.id=="casas"?" p":""}">${i.img&&i.img!="-"?`<img src="${E(i.img)}" alt="Imagen de ${E(i.t)}" loading="lazy" width="720" height="720">`:`<b>${E(i.t.trim()[0])}</b>`}${cat?`<span class="bd">${E(cat)}</span>`:""}</div>`:"";
 return `<article class="c" data-c="${E(cat)}"${k?` style="--k:${k}"`:""}>${m}<div class="b">${ic}<h3>${E(i.t)}</h3><p>${E(cap(i.d))}</p>${f?`<div class="f">${f}</div>`:""}</div></article>`}
-main.innerHTML=c.sections.map((s,n)=>{const M=s.id=="casas"||s.items.some(i=>i.img);
+main.innerHTML=c.sections.map((s,n)=>{const M=s.id=="casas"||s.items.some(i=>i.img&&i.img!="-");
 const cats=s.id=="grupos"?[...new Set(s.items.map(i=>i.cat).filter(Boolean))]:[];
 const fl=cats.length?`<div class="fl"><button class="on" data-c="">Todos</button>${cats.map(x=>`<button data-c="${E(x)}">${E(x)}</button>`).join("")}</div>`:"";
 const body=s.id=="faq"?s.items.map(i=>`<details><summary>${E(i.t)}</summary><p>${E(i.d)}</p></details>`).join(""):`${fl}<div class="g">${s.items.map((i,j)=>card(s,i,j,M)).join("")}</div>`;

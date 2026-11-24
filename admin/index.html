@@ -38,7 +38,8 @@ const say=(t,keep)=>{msg.style.display="block";msg.textContent=t;clearTimeout(sa
 const H=()=>({Authorization:"Bearer "+S("tok"),Accept:"application/vnd.github+json"}),api=()=>`https://api.github.com/repos/${S("repo")}/contents/content.json`;
 const esc=x=>String(x==null?"":x).replace(/[&<>"]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m]));
 const TMR=/(\d{1,2}(?::\d{2})?\s?(?:am|pm)\s+a\s+\d{1,2}(?::\d{2})?\s?(?:am|pm))\s*$/i,DAYR=/lunes|martes|mi[eé]rcoles|jueves|viernes|s[aá]bado|domingo/i;
-function norm(c){c.sections.forEach(s=>s.items.forEach(i=>{if(["dias","hora","cat","btn"].some(k=>k in i))return;let h=i.h||"";
+const DEFIMG={"Gran Comedor":"images/gran-comedor.webp","Sala de retos":"images/sala-de-retos.webp","Postulaciones":"images/postulaciones.webp","Cabina Fotográfica":"images/cabina.webp","Cabina":"images/cabina.webp","Uniforme en Zepeto":"images/zepeto.webp","Corazón de bruja":"images/corazon-de-bruja.webp","Instagram":"images/instagram.webp"};
+function norm(c){c.sections.forEach(s=>s.items.forEach(i=>{if(!i.img&&DEFIMG[i.t])i.img=DEFIMG[i.t];if(["dias","hora","cat","btn"].some(k=>k in i))return;let h=i.h||"";
 if(["zepeto","canal","instagram"].includes(h)){i.btn=h;i.h="";return}
 if(s.id=="grupos"&&h.includes(" · ")){const p=h.split(" · ");i.cat=p.shift();h=p.join(" · ")}
 if(s.id=="grupos"||s.id=="tiendas"){const m=h.match(TMR);let o="",r=h;if(m){o=m[1];r=h.slice(0,m.index).replace(/[ ,]+$/,"")}const dy=DAYR.test(r);i.dias=dy?r:"";i.hora=o;i.h=dy?"":r}}));return c}
@@ -69,7 +70,7 @@ const bd=mk("div","bd");bd.append(F(it,"t","Nombre",{on:()=>sp.textContent=it.t|
 if(s.id=="grupos")bd.append(SEL(it,"cat","Tipo de grupo",[["","Sin tipo"],["Fijo","Fijo"],["Opcional","Opcional"],["Temporal","Temporal"]]));
 if(s.id=="grupos"||s.id=="tiendas")bd.append(sched(it));
 if(s.id=="bienvenida")bd.append(SEL(it,"btn","Botón que se muestra",[["","Ninguno"],["zepeto","Uniformes de Zepeto"],["canal","Canal Corazón de bruja"],["instagram","Instagram"]]));
-const ap=mk("details","ap","<summary>Imagen e ícono</summary>");ap.append(F(it,"img","Imagen (ruta, ej. images/gringotts.webp)"),F(it,"ic","Ícono emoji (para tarjetas sin foto)"));bd.append(ap);
+const ap=mk("details","ap","<summary>Imagen e ícono</summary>");ap.append(F(it,"img","Imagen (ruta, ej. images/gringotts.webp · escribe - para quitarla)"),F(it,"ic","Ícono emoji (para tarjetas sin foto)"));bd.append(ap);
 box.append(hd,bd,mk("div","ie","Fin del elemento "+(ii+1)));return box}
 function sec(key,num,title,sub,id){const d=mk("details","sec");d.id=id;d.open=open.has(key);d.ontoggle=()=>d.open?open.add(key):open.delete(key);
 d.innerHTML=`<summary><i>${num}</i><span>${esc(title)}</span><small>${esc(sub||"")}</small></summary>`;const n=mk("div","in");d.append(n);m.append(d);return n}
